@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="justFinal">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../eclipse/java-2020-09/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/mysql-connector-java-5.1.49-bin.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/slf4j-api-1.6.0.jar"/>
+    </path>
+    <path id="JavaFX SDK.libraryclasspath">
+        <pathelement location="../../../.p2/pool/plugins/org.eclipse.fx.ide.css.jfx8_3.5.0.201907240300.jar"/>
+    </path>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../../.p2/pool/plugins/org.junit.jupiter.api_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.jupiter.engine_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.jupiter.params_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.platform.commons_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.platform.engine_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.platform.launcher_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.platform.runner_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.platform.suite.api_1.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit.vintage.engine_5.7.0.v20201026-1537.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.opentest4j_1.2.0.v20190826-0900.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.apiguardian_1.1.0.v20190826-0900.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/annotations-api.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/catalina-ant.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/catalina-ha.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/catalina-storeconfig.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/catalina-tribes.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/catalina.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/ecj-4.6.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/el-api.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/jasper-el.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/jasper.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/jaspic-api.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/jsp-api.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/mysql-connector-java-5.1.49.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/servlet-api.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-api.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-coyote.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-dbcp.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-de.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-ko.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-i18n-zh-CN.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-jdbc.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-jni.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-util-scan.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-util.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/tomcat-websocket.jar"/>
+        <pathelement location="${ECLIPSE_HOME}server/apache-tomcat-8.5.60/lib/websocket-api.jar"/>
+    </path>
+    <path id="justFinal.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="JavaFX SDK.libraryclasspath"/>
+        <pathelement location="../../../../../Program Files (x86)/MySQL/Connector J 5.1/mysql-connector-java-5.1.49-bin.jar"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+        <pathelement location="../../prova/trunk/logback-classic-1.2.3.jar"/>
+        <pathelement location="../../prova/trunk/logback-core-1.2.3.jar"/>
+        <pathelement location="../../prova/trunk/mapjfx-1.33.2.jar"/>
+        <pathelement location="../../prova/trunk/mapjfx-demo-1.33.2.jar"/>
+        <pathelement location="../../prova/trunk/slf4j-api-1.7.25.jar"/>
+        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.ucls"/>
+                <exclude name="**/*.useq"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="justFinal.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Main (27)">
+        <java classname="application.Main" failonerror="true" fork="yes">
+            <classpath refid="justFinal.classpath"/>
+        </java>
+    </target>
+    <target name="src (4)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.TestLogin" todir="${junit.output.dir}"/>
+            <test name="test.TestMessage" todir="${junit.output.dir}"/>
+            <test name="test.TestNecessita" todir="${junit.output.dir}"/>
+            <test name="test.TestPartecipaEvento" todir="${junit.output.dir}"/>
+            <test name="test.TestTurno" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="justFinal.classpath"/>
+        </junit>
+    </target>
+    <target name="TestTurno">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.TestTurno" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="justFinal.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

@@ -1,0 +1,178 @@
+@charset "ISO-8859-1";
+
+body{
+background-image:URL("../img/mani.jpg");
+background-size:cover;
+}
+
+h1{
+	position:absolute;
+	top:12%;
+	left:8%;
+	font-family: Verdana;
+	font-weight: bold;
+	text-align:left;
+	font-size:50px;
+	color: black;
+}
+
+.ritira button[type="submit"]
+{
+	position:absolute;
+	top:40%;
+	left:70%;
+	border-color:white;
+	outline:none;
+	height: 60px;
+	width:250px;
+	background: red;
+	color: #fff;
+	border-radius: 10px;
+	font-weight:bold;
+	font-size:20px;
+	cursor:pointer;	
+}
+
+.ritira button[type="submit"]:hover
+{
+	cursor: pointer;
+	background:yellow;
+	color: #000;
+}
+
+.contatta button[type="submit"]
+{
+	position:absolute;
+	top:88%;
+	left:75%;
+	border-color:white;
+	outline:none;
+	height: 60px;
+	width:250px;
+	background: red;
+	color: #fff;
+	border-radius: 10px;
+	font-weight:bold;
+	font-size:20px;
+	cursor:pointer;	
+}
+
+.contatta button[type="submit"]:hover
+{
+	cursor: pointer;
+	background:yellow;
+	color: #000;
+}
+.cancella button[type="submit"]
+{
+	position:absolute;
+	top:60%;
+	left:70%;
+	border-color:white;
+	outline:none;
+	height: 60px;
+	width:250px;
+	background: red;
+	color: #fff;
+	border-radius: 10px;
+	font-weight:bold;
+	font-size:20px;
+	cursor:pointer;	
+}
+
+.cancella button[type="submit"]:hover
+{
+	cursor: pointer;
+	background:yellow;
+	color: #000;
+}
+
+
+
+
+
+.content-table {
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width:200px;
+  max-width:550px;
+  height:150px;
+  font-weight: bold;
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 3px 3px 3px 3px;
+}
+
+.content-table thead tr {
+  color:red;
+  text-align: left;
+  font-weight: bold;
+  font-size:16px;
+}
+
+
+.content-table th,
+.content-table td {
+  padding: 15px 20px ;
+}
+
+
+.content-table  th,
+.content-table tbody tr {
+  border-bottom: 1px solid black;
+}
+
+/*.content-table tbody tr:nth-of-type(even) {
+  background-color: white;
+}*/
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 1px solid ;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+ 
+}
+
+.tab{
+	position:absolute;
+	top:28%;
+	left:8%;
+}
+
+.ind button[type="submit"]{
+	position:absolute;
+	left:5%;
+	font-size:20px;
+	border-color:black;
+	height:40px;
+	width:150px;
+	background:white;
+	text-decoration:none;
+	line-height:20px;
+	color:rgb(0,0,128);
+	top:90%;
+}
+
+.ind button[type="submit"]:hover
+{
+		color:red;	
+}
+
+.cancella input{
+	position: absolute;
+	left: 70%;
+	top: 70%;
+	width: 250px;
+	border: solid 2px;
+	height:50px;
+}
+
+.ritira input{
+	position: absolute;
+	left: 70%;
+	top: 50%;
+	width: 250px;
+	border: solid 2px;
+	height:50px;
+	}

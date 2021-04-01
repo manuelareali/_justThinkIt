@@ -1,9 +1,6 @@
 package beanweb;
 
 
-
-import java.sql.SQLException;
-
 import bean.ProfileBoundary;
 import controller.ProfileController;
 import controller.UserHomeController;
@@ -12,11 +9,6 @@ import controller.UserHomeController;
 
 public class UserHomeBoundary{
 
-
-
-/**
-	 * 
-	 */
 
 private static UserHomeBoundary instance = null;
 

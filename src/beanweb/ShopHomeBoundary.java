@@ -30,18 +30,7 @@ public class ShopHomeBoundary {
 
     }
 
-    
-   /* void deleteAccountButtonPressed(ActionEvent event) {
-    	
-    	Alert alert = new Alert(AlertType.CONFIRMATION);
-    	alert.setTitle("Logout");
-    	alert.setHeaderText("Se cancelli il tuo account verrano cancellati anche le tue attività in corso e potresti ricevere delle sanzioni");
-    	alert.setContentText("Sei sicuro di voler cancellare il tuo account?");
-    	Optional<ButtonType> result = alert.showAndWait();
-    	if (result.get() == ButtonType.OK){
-    		logger.trace("sei morto");
-    	}
-    }*/
+
 
    
     public void gestisciEventi() {

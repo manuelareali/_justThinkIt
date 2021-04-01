@@ -1,11 +1,7 @@
 package beanweb;
 
-
-
-
 import java.util.List;
 import controller.GestioneTurniCaritas;
-import entity.CaritasUser;
 import entity.TurnoTab;
 
 
@@ -18,9 +14,6 @@ public class GestisciTurniBoundary {
 	    
 	    private static GestisciTurniBoundary instance  = null;
 	    
-		private CreaTurnoBoundary caritasTurniBoundary;
-	    
-
 		public static GestisciTurniBoundary getInstance() {
 			if(instance == null) {
 				instance = new GestisciTurniBoundary();
@@ -30,7 +23,7 @@ public class GestisciTurniBoundary {
 	    
 	    public GestisciTurniBoundary() {
 	    	this.gestTurn = new GestioneTurniCaritas();
-	    	this.caritasTurniBoundary = new CreaTurnoBoundary();
+	    	new CreaTurnoBoundary();
 	    }
 	    
 	   
@@ -52,7 +45,7 @@ public class GestisciTurniBoundary {
 	    }
 
 	   
-	  public boolean ModificaTurno(String note, String idTurno) {
+	  public boolean modificaTurno(String note, String idTurno) {
 			   if (note == null || note.equals("") || idTurno == null || idTurno.equals("")) {
 				   return false;
 			   }else {

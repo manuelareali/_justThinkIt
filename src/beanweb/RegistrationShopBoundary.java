@@ -1,8 +1,6 @@
 package beanweb;
 
 
-import java.sql.SQLException;
-
 
 import controller.RegistrationShopManagerController;
 

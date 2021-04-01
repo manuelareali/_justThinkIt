@@ -1,6 +1,5 @@
 package controller;
 
-import beanweb.CreaNecessitaBoundary;
 import dao.BachecaDao;
 import entity.Necessita;
 

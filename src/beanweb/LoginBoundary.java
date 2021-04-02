@@ -47,7 +47,7 @@ public class LoginBoundary {
 
 
 	public String loginPressed(String username, String password) {
-		beanweb.CaritasHomeBoundary caritasHomeBoundary = null;
+		beanweb.CaritasHomeBoundary caritasHomeBoundary = new CaritasHomeBoundary();
 		int idUser = loginC.trovaID(username);
 		String loggedUser = loginC.loginAccess(username, password);
 		if (loggedUser.equalsIgnoreCase("Volontario")) {

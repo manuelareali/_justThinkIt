@@ -1,5 +1,9 @@
+
+
 body{
-	margin: 0;
+	background-image:URL("../img/mani.jpg");
+	background-size:cover;
+		margin: 0;
 	padding:0;
 	font-family: sans-serif;
 	background: linear-gradinent(#E0EAFC,#CFDEF3);

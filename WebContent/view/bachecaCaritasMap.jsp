@@ -81,7 +81,7 @@ Class.forName("com.mysql.jdbc.Driver");
 		<button type="submit" name = "CREA DONAZIONE" value = "CREA DONAZIONE">CREA DONAZIONE</button>
 	</div>
 			<div class = "ind">
-			<a href= "NewMap.jsp">INDIETRO</a>
+			<a href= "map.jsp">INDIETRO</a>
 			</div>
 	</form>
 </body>

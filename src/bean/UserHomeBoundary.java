@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -116,11 +117,11 @@ private int userId;
 
 	public void initData(String nome, String cognome, int id) {
      	this.nomeCognome.setText(nome + " "+ cognome);
-    /*	final Circle clip = new Circle();
+    	final Circle clip = new Circle();
     	clip.setCenterX(25);
     	clip.setCenterY(58);
     	clip.setRadius(200);
-        this.profileImage.setClip(clip);*/
+        this.profileImage.setClip(clip);
         this.userId = id;
   
     }

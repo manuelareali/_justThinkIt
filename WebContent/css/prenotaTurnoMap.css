@@ -4,6 +4,9 @@ body{
 	font-family: sans-serif;
 	background: linear-gradinent(#E0EAFC,#CFDEF3);
 	height:100vh;
+	background-image:URL("../img/mani.jpg");
+	background-size:cover;
+	
 }
 
 .header{

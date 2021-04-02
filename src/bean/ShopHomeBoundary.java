@@ -25,9 +25,7 @@ public class ShopHomeBoundary {
 	
 
 	private static Logger logger = LoggerFactory.getLogger(ShopHomeBoundary.class.getName());
-	
-//	private Image img1;
-//	private int currentImage;
+
 	private int idShop;
 	private static ShopHomeBoundary instance = null;
 	
@@ -42,12 +40,7 @@ public class ShopHomeBoundary {
 			return instance;
 		}
 
-	public ShopHomeBoundary() {
-	/*	img1 = new Image("file:/C:/Users/PRX/Desktop/TZEDAKAH/DragoInizio/DragoForestain.PNG");
-		
-		this.currentImage = 0;*/
-	}
-		
+	
     @FXML
     private Button gestEvent;
 

@@ -122,25 +122,21 @@ public class RegistraCaritasBoundary implements Initializable {
 
 	public int checker() {
 		pageSwitch = new TransizionePagine();
-		// Controlla che non ci siano campi lasciati vuoti
 		if(!pageSwitch.checkerText(textFields)) {
 			passwordMatch.setText("Alcuni campi sono vuoti");
 			passwordMatch.setVisible(true);
 		}
 			if (type.isSelected()) {
 				tipo = "Vestiti";
-				return 0; // Almeno uno dei tipi deve essere selezionato
+				return 0;
 
 			} else if (type2.isSelected()) {
 				tipo = "Cibo";
 				passwordMatch.setText("Alcuni campi sono vuoti 2");
 				passwordMatch.setVisible(true);
-				return 0; // Almeno uno dei tipi deve essere selezionato
+				return 0;
 			}
 		
-
-		// Valida che i campi password e conferma password siano uguali
-
 		if (passwordCaritas.getText().equals(confermaPassCaritas.getText())) {
 			passwordMatch.setVisible(false);
 			return 0;

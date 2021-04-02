@@ -28,14 +28,7 @@ private int userId;
 	
 	private UserHomeController userController ;
 
-	
-	//Images slideshow
-/*	private Image img1 ;
-	private Image img2;
-	private Image img3;
-	private Image[] images = {img1, img2, img3};
-	private int currentImage;*/
-	
+
 	
 	
 	public static UserHomeBoundary getInstance() {
@@ -46,13 +39,6 @@ private int userId;
 	}
 	
 	
-	public UserHomeBoundary() {
-		/*img1 = new Image("file:/C:/Users/PRX/Desktop/TZEDAKAH/DragoInizio/DragoForestain.PNG");
-		
-		 currentImage = 0;
-		 userController = new UserHomeController();
-	*/
-	}
 	
 	@FXML
     private Text nomeCognome;
@@ -82,7 +68,6 @@ private int userId;
     
     @FXML
     void deleteAccountButtonPressed(ActionEvent event) {
-    		//lo faremo presto
     	this.userController.deleteAccount(userId);
     }
 
@@ -105,11 +90,6 @@ private int userId;
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		}
-    }
-
-    @FXML
-    void helpButtonPressed(ActionEvent event) {
-    	this.userController.helpButtonPressed();
     }
 
  

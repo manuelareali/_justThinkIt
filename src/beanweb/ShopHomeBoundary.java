@@ -21,13 +21,7 @@ public class ShopHomeBoundary {
 		
     public void cercaCaritas(){
     	TransizionePagine switchPage = new TransizionePagine();
-    	try {
-			switchPage.apriMappa(this.idShop);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+    	switchPage.apriMappa(this.idShop);
     }
 
 

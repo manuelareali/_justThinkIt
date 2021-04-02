@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 
 public class CaritasHomeBoundary {
 
-//	private Image img1 = new Image("file:/C:/Users/PRX/Desktop/TZEDAKAH/DragoInizio/DragoForestain.PNG");
 	private int idCar;
 	
 	private static CaritasHomeBoundary instance = null;
@@ -36,9 +35,6 @@ public class CaritasHomeBoundary {
 
 	@FXML
 	private Button deleteAccountButton;
-
-	@FXML
-	private ImageView imagePresentation;
 
 	@FXML
 	private Button vBacheca;

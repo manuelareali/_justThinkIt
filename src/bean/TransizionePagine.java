@@ -26,9 +26,7 @@ public class TransizionePagine {
 
 	private static Logger logger = LoggerFactory.getLogger(TransizionePagine.class.getName());
 	
-	public TransizionePagine() {
-		//default
-	}
+	
 				
 	public void visualizzaPagina(String pagina, Window stage){
 		

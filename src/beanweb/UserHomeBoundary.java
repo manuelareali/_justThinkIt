@@ -37,7 +37,6 @@ private int userId;
     
  
     public void deleteAccountButtonPressed() {
-    		//lo faremo presto
     	this.userController.deleteAccount(userId);
     }
 
@@ -47,22 +46,7 @@ private int userId;
     	ProfileController profileController = new ProfileController();
 			profileController.initData(userId, profileBean);
 		}
-   
-
-    
-    void helpButtonPressed() {
-    	this.userController.helpButtonPressed();
-    }
-
- 
-
-   
-   /*public void logoutButtonPressed() {    	
-    	TransizionePagine pageSwitch = new TransizionePagine();
-    	pageSwitch.logout(logoutButton.getScene().getWindow());
-
-	}*/
-
+  
   
 
 

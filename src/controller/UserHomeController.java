@@ -1,6 +1,6 @@
 package controller;
 
-import beanweb.UserHomeBoundary;
+
 import dao.UserDao;
 import dao.VolunteerRepository;
 import entity.VolunteerUser;
@@ -10,17 +10,6 @@ import entity.VolunteerUser;
 public  class UserHomeController{
 	
 	
-	
-	public UserHomeController() {
-		//default
-	}
-	
-	
-	public void helpButtonPressed() {
-		//  da fare
-		
-		
-	}
 
 	public void deleteAccount(int id) {
 		UserDao userd = new UserDao();

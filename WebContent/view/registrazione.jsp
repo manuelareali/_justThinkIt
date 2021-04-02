@@ -4,7 +4,7 @@
 <html>
  <head>
   <meta charset="utf-8">
-  <title>REGISTRATI COME?</title>
+  <title>REGISTRAZIONE</title>
   <link rel="stylesheet" href ="../css/registration.css">
   <link rel="icon" sizes="64x64" href="../img/favicon.png">
  </head>

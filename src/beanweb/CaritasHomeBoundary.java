@@ -47,21 +47,8 @@ public class CaritasHomeBoundary {
 			bacheca.getInstance().loadFormBoundary(idCar);
 	}
 
-	void deleteAccountButtonPressed() {
-	
-	}
-
-	void helpButtonPressed() {
-		
-	}
-
-
-	
-	
-
 	public void initDataC(int id, String nome) {
 		this.idCar = id;
-		//nomeCognome.setText(nome);
 	}
 
 }

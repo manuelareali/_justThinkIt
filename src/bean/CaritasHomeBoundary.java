@@ -106,8 +106,6 @@ public class CaritasHomeBoundary {
 
 	@FXML
 	void gestisciEventi(ActionEvent event) {
-		// handle the event here
-
 		try {
 
 			FXMLLoader fxmlLoader = new FXMLLoader();

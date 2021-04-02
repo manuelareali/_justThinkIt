@@ -16,7 +16,7 @@ public class LoginBoundary {
 	private UserHomeController userHomeController;
 	private beanweb.ShopHomeBoundary shopHomeBoundary;
 	private static LoginBoundary instance = null;
-	private beanweb.CaritasHomeBoundary caritasHomeBoundary;
+	
 
 	public static LoginBoundary getInstance() {
 		if (instance == null) {
@@ -47,6 +47,7 @@ public class LoginBoundary {
 
 
 	public String loginPressed(String username, String password) {
+		beanweb.CaritasHomeBoundary caritasHomeBoundary = null;
 		int idUser = loginC.trovaID(username);
 		String loggedUser = loginC.loginAccess(username, password);
 		if (loggedUser.equalsIgnoreCase("Volontario")) {

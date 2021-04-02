@@ -52,12 +52,7 @@ private int userId;
 
     public int  searchCaritasButtonPressed(){
     	TransizionePagine switchPage = new TransizionePagine();
-    	try {
-			switchPage.apriMappa(this.userId);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	switchPage.apriMappa(this.userId);
     	return 0;
     }
  

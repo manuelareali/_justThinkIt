@@ -20,14 +20,13 @@ import javafx.stage.Stage;
 public class LoginBoundary {
 
 	private static Logger logger = LoggerFactory.getLogger(LoginBoundary.class.getName());
-	//può essere tolta la stringa
 	private String s = "errore IoException";
 
 	private LoginController loginC = new LoginController();
 
 
 	private ShopHomeBoundary shopHomeBoundary;
-	private CaritasHomeBoundary caritasHomeBoundary;
+	
 
 
 
@@ -47,6 +46,7 @@ public class LoginBoundary {
 	
 	@FXML
 	void loginPressed(ActionEvent event) {	
+		CaritasHomeBoundary caritasHomeBoundary;
 		int idUser = loginC.trovaID(usernameField.getText());
 		String loggedUser = loginC.loginAccess(usernameField.getText(), passwordField.getText());
 		if (loggedUser.equalsIgnoreCase("Volontario")) {

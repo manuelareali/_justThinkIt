@@ -52,7 +52,7 @@
 			<p>Password</p>
 			<input type="password" id="Password" name = "Password" placeholder="Enter Password" autocomplete="off">
 			<button type= "submit" name = "login" value = "login">Login</button>
-			<a href="registrazione.html">Don't have an account?</a>
+			<a href="registrazione.jsp">Don't have an account?</a>
 		</form>
 	</div>
 </body>

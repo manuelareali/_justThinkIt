@@ -8,9 +8,10 @@ import entity.EventTab;
 import entity.ShopUser;
 
 public class PromuoviEventoController {
+	
+	private EventoDao eventDao;
 	private CaritasUser caritas;
 	private ShopUser shop;
-	private EventoDao eventDao;
 	
 	
 	public PromuoviEventoController() {

@@ -373,7 +373,7 @@ public class CercaCaritas {
 
 	}
 
-	// molto da cambiare
+
 
 	public CercaCaritas() throws NumberFormatException, SQLException {	
 		cercaController = new CercaCaritasController();
@@ -411,7 +411,7 @@ public class CercaCaritas {
 	
 		logger.trace("begin initialize");
 
-//	     
+     
 		mapView.setCustomMapviewCssURL(getClass().getResource("/custom_mapview.css"));
 
 		leftControls.setExpandedPane(optionsLocations);

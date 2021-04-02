@@ -25,7 +25,7 @@ public  class UserHomeController{
 			((bean.UserHomeBoundary) userHomeBoundary).initData(user.getNome(), user.getCognome(), user.getId());
 		}
 		else if(userHomeBoundary.getClass() == beanweb.UserHomeBoundary.class){
-			((beanweb.UserHomeBoundary) userHomeBoundary).getInstance().initData(user.getNome(), user.getCognome(), user.getId());
+			((beanweb.UserHomeBoundary) userHomeBoundary).getInstance().initData(user.getId());
 		}
     }
 

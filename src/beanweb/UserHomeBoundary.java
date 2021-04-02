@@ -57,8 +57,7 @@ private int userId;
     }
  
 
-	public void initData(String nome, String cognome, int id) {
-    	//this.nomeCognome.setText(nome + " "+ cognome);
+	public void initData( int id) {
         this.userId = id;
   
     }

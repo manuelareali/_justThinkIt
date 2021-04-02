@@ -58,8 +58,7 @@ public class GestisciEventiBoundary {
 	private TableColumn<EventTab, Integer> numPartecipanti;
 	@FXML
 	private TableColumn<EventTab, Float> importo;
-	@FXML
-	private Button modificaE;
+	
 
 	@FXML
 	private Button eliminaE;
@@ -110,14 +109,9 @@ public class GestisciEventiBoundary {
 
 	@FXML
 	boolean eliminaEvento(ActionEvent event) {
-		return gestEventC.eliminaEvento(this.event.getNomeEvento());
+		return gestEventC.cancellaEvento(this.event.getId());
 	}
 
-	@FXML
-	void modificaEvento(ActionEvent event) {
-		// non si sa se è da fare o no
-
-	}
 
 	@FXML
 	void prendiEvento(MouseEvent e) {

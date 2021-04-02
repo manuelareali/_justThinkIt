@@ -1,5 +1,8 @@
 @charset "ISO-8859-1";
-
+body{
+background-image:URL("../img/mani.jpg");
+background-size:cover;
+}
 body{
 	margin: 0;
 	padding:0;

@@ -13,14 +13,14 @@
 				if ((DonationBoundary.getInstance().creaDonazione(1,request.getParameter("IndirizzoVolontario"), request.getParameter("descrizione") )== true)){
 					
 %>
-		<jsp:forward page="NewMap.jsp"/>
+		<jsp:forward page="map.jsp"/>
 <%		}}
 			
 		
 		if("Cibo".equals(request.getParameter("tipo"))){
 				if ((DonationBoundary.getInstance().creaDonazione(2,request.getParameter("IndirizzoVolontario"), request.getParameter("descrizione"))== true)){
 %>
-	<jsp:forward page="NewMap.jsp"/>
+	<jsp:forward page="map.jsp"/>
 <%		
 	}}}
 	

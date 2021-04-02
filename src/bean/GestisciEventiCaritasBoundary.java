@@ -67,7 +67,7 @@ public class GestisciEventiCaritasBoundary {
 
 	@FXML
 	boolean cancellaEvent(ActionEvent event) {
-		return gestEventC.eliminaEvento(this.event.getNomeEvento());
+		return gestEventC.cancellaEvento(this.event.getId());
 
 	}
 

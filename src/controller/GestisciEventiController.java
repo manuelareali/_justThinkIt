@@ -27,11 +27,6 @@ public class GestisciEventiController {
 		return eventDao.cancellaEvento(evento);
 	}
 	
-	public boolean eliminaEvento(String nomeEvento) {
-		return eventDao.deliteEvent(nomeEvento);
-	}
-	
-	
-	
+		
 	
 }

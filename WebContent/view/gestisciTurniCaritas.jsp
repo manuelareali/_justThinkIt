@@ -14,7 +14,7 @@
 <%
 Class.forName("com.mysql.jdbc.Driver");
   if (request.getParameter("modifica") != null){
-	if (GestisciTurniBoundary.getInstance().ModificaTurno(request.getParameter("note"),request.getParameter("id")) == true){
+	if (GestisciTurniBoundary.getInstance().modificaTurno(request.getParameter("note"),request.getParameter("id")) == true){
 		
 %>	
 		<jsp:forward page="homeCaritas.jsp"/>

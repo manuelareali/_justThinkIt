@@ -197,31 +197,7 @@ public class EventoDao {
 	   
    }
    
-   public boolean deliteEvent(String evento) {
-	   
-	   int rowAffected;
- 	
-	    String sql = "call cancella_evento(?)";
 
-        try (Connection conn = connector.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-	       	  pstmt.setString(1, evento);
-      
-            rowAffected = pstmt.executeUpdate();
-
-            if (rowAffected == 1) {
-                logger.debug(SUCCESS);
-            } else { logger.debug(FAILED); return false;}
-
-
-        } catch (SQLException ex) {
-            logger.debug((ex.getMessage()));
-        }
-		    	
-        return true;
-        
-   }
-   
    
    public boolean modificaEvento(int idEve) {
 	   

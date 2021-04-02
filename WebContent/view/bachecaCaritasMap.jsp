@@ -35,14 +35,14 @@ Class.forName("com.mysql.jdbc.Driver");
 <head>
 <meta charset="ISO-8859-1">
 <title>BACHECA CARITAS</title>
-<link rel="stylesheet" href ="../css/bachecaCaritasMa.css">
+<link rel="stylesheet" href ="../css/bachecaCaritasMap.css">
 </head>
 <body>
 <form action = "bachecaCaritasMap.jsp" name = "reg" method = "POST">
 	<div class = "header">
 		<h2>JUST THINK IT</h2>
 	</div>
-		<h4>Benvenuti nella bacheca Caritas</h4>
+		<h1>BENVENUTI NELLA BACHECA DELLA CARITAS</h1>
 <div class ="tab">
  <table class="content-table" id = "giorno">
   <thead>
@@ -70,10 +70,10 @@ Class.forName("com.mysql.jdbc.Driver");
 	i++;
 }
 %>
-
+ 	
   </tbody>
 </table>
-
+ </div>
 	<div class = "contatta">
 		<button type ="submit" name = "CONTATTA CARITAS" value = "CONTATTA CARITAS">CONTATTA CARITAS</button>
 	</div>

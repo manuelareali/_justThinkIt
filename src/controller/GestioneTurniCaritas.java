@@ -32,9 +32,7 @@ public class GestioneTurniCaritas {
 		return this.turniDao.cancellaTurno(idTurn);
 	
 	}
-	
-	
-	
+
 	public List<TurnoTab> caricaTurni(int idCaritas) {
 		return this.turniDao.visualizzaTurni(idCaritas);
 	}

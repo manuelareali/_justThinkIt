@@ -5,7 +5,7 @@
  <head>
   <meta charset="utf-8">
   <title>REGISTRAZIONE</title>
-  <link rel="stylesheet" href ="../css/registration.css">
+  <link rel="stylesheet" href ="../css/registratione.css">
   <link rel="icon" sizes="64x64" href="../img/favicon.png">
  </head>
  <body>

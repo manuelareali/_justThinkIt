@@ -28,7 +28,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>HOME NEGOZIO</title>
-<link rel="stylesheet" href ="../css/homeNeg.css">
+<link rel="stylesheet" href ="../css/homeNegozio.css">
 <link rel="icon" sizes="64x64" href="../img/favicon.png">
 </head>
 <body>

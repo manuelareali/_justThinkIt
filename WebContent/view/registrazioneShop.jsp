@@ -42,8 +42,11 @@ Class.forName("com.mysql.jdbc.Driver");
 <link rel="stylesheet" href =" ../css/registrazioneShop.css">
 </head>
 <body>
-    <a href ="registrazione.jsp"> Indietro </a>
-		<div class = "titolo"><h2>REGISTRAZIONE NEGOZIO</h2></div>
+	<div class = "header">
+		<h2>JUST THINK IT</h2>
+	</div>
+   	<a href ="registrazione.jsp">INDIETRO </a>
+		<div class = "titolo"><h1>REGISTRAZIONE NEGOZIO</h1></div>
 	<form action = "registrazioneShop.jsp" name = "reg" method = "POST">
     <div class="Negozio">
   				<h3>Nome Negozio</h3>

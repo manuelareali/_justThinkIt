@@ -15,8 +15,7 @@ Class.forName("com.mysql.jdbc.Driver");
 %>
        	<jsp:forward page="homeCaritas.jsp"/>
 
-<%	
-					}
+<%					}
  				}
  			else if ((request.getParameter("Tipologia").equalsIgnoreCase("Cibo"))){
 	 				if ((RegistraCaritasBoundary.completaButtonPressed(request.getParameter("NomeCaritas"),request.getParameter("Password"),request.getParameter("IndirizzoCaritas")+ " "+ request.getParameter("Via")+" "+ request.getParameter("nCivico"),"Cibo",request.getParameter("RecapitoTel"),request.getParameter("Email"), request.getParameter("cittadiResidenza"))) == true ){
@@ -24,7 +23,7 @@ Class.forName("com.mysql.jdbc.Driver");
 %>
  			<jsp:forward page="homeCaritas.jsp"/>
 <% 						}
-	 				 }
+ 					}
 	 			}
  			}
  		
@@ -40,10 +39,11 @@ Class.forName("com.mysql.jdbc.Driver");
     <link rel="stylesheet" href ="../css/registrazioneCaritas.css">
   </head>
   <body>
-  	<div class ="ind">
-    	<a href ="registrazione.jsp">INDIETRO </a>
-    </div>
-		<div class = "titolo"><h2>REGISTRAZIONE CARITAS</h2></div>
+  <div class = "header">
+		<h2>JUST THINK IT</h2>
+	</div>
+   	<a href ="registrazione.jsp">INDIETRO </a>
+		<div class = "titolo"><h1>REGISTRAZIONE CARITAS</h1></div>
 	<form action = "registrazioneCaritas.jsp" name = "reg" method = "POST">
     <div class="NomeCaritas">
   				<h3>Nome della Caritas</h3>
@@ -63,12 +63,14 @@ Class.forName("com.mysql.jdbc.Driver");
   <div class = "n"><input type="text" id = "nCivico" name= "nCivico" placeholder="es.54"/></div>
      </div>
      <div class = "fine">
-       <br/><br/><h3>Vestiti<input type="checkbox" name="Tipologia" value="clothes"/> <input type="checkbox" name="Tipologia" value="food"/>Cibo</h3>
-			   <h3>Telefono</h3>
+  		 <h3>Telefono</h3>
         <input type="text" id= "RecapitoTel" name= "RecapitoTel" placeholder="es.34324234"/>
         		<h3>Email</h3>
         <input type="text" id = "Email"  name="Email" placeholder="es.caritasRoma@gmail.com"/>
-      </div>
+       <br/><br/><h3>Vestiti<input type="checkbox" name="Tipologia" value="clothes"/> <input type="checkbox" name="Tipologia" value="food"/>Cibo</h3>
+	</div>  
+			  
+     
       <div class = "box">
 		<br/><br/><button type="submit" name= "COMPLETA REGISTRAZIONE" value="COMPLETA REGISTRAZIONE">COMPLETA REGISTRAZIONE</button>
 	</div>

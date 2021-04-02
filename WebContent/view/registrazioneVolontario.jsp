@@ -36,11 +36,14 @@ Class.forName("com.mysql.jdbc.Driver");
 <meta charset="ISO-8859-1">
 <title>REGISTRAZIONE VOLONTARIO</title>
 <link rel="icon" sizes="64x64" href="../img/favicon.png">
-<link rel="stylesheet" href =" ../css/registrazioneVolontario.css">
+<link rel="stylesheet" href =" ../css/registrazioneVol.css">
 </head>
 <body>
-    <a href ="registrazione.jsp">Indietro</a>
-		<div class = "titolo"><h2>Registrazione Volontario</h2></div>
+	<div class = "header">
+		<h2>JUST THINK IT</h2>
+	</div>
+    <a href ="registrazione.jsp">INDIETRO</a>
+		<div class = "titolo"><h1>REGISTRAZIONE VOLONTARIO</h1></div>
 	<form action = "registrazioneVolontario.jsp" name = "reg" method = "POST">
     <div class="Volontario">
   		<h3>Nome</h3>

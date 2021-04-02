@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bean.CaritasHomeBoundary">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bean.CaritasHomeBoundary">
   <children>
     <AnchorPane prefHeight="600.0" prefWidth="800.0">
       <children>
@@ -35,7 +35,7 @@
             <Font size="25.0" fx:id="x1" />
           </font>
         </Button>
-        <Button fx:id="eventiC" font="$x1" layoutY="480.0" mnemonicParsing="false" onAction="#gestisciEventi" prefHeight="116.0" prefWidth="290.0000999999975" text="Gestisci Eventi" AnchorPane.rightAnchor="310.0" />
+        <Button fx:id="eventiC" font="$x1" layoutX="200.0" layoutY="478.0" mnemonicParsing="false" onAction="#gestisciEventi" prefHeight="116.0" prefWidth="290.0000999999975" text="Gestisci Eventi" AnchorPane.rightAnchor="309.0" />
         <Button fx:id="turni" font="$x1" layoutX="492.0" layoutY="358.0" mnemonicParsing="false" onAction="#gestisciTurni" prefHeight="115.9998779296875" prefWidth="307.0" text="Gestisci Turni" />
         <Text fx:id="textOverImages" layoutX="393.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search, Find, Help.">
           <font>
@@ -68,7 +68,9 @@
             <Image url="file:/C:/Users/Admin/Desktop/JUST-THINK-IT.git/trunk/resources/images/defalutUserProfile.png" />
           </image>
         </ImageView>
-        <Button fx:id="gestisciDona" font="$x1" layoutX="492.0" layoutY="478.0" mnemonicParsing="false" onAction="#gestisciDonazioni" prefHeight="116.0" prefWidth="305.0" text="Gestisci Donazioni" />
+        <Button fx:id="gestisciDona" font="$x1" layoutX="492.0" layoutY="478.0" mnemonicParsing="false" onAction="#gestisciDonazioni" prefHeight="116.0" prefWidth="307.0" text="Gestisci Donazioni" />
+            <ImageView fitHeight="309.0" fitWidth="599.0" layoutX="199.0" layoutY="44.0">
+            </ImageView>
       </children>
     </AnchorPane>
   </children>

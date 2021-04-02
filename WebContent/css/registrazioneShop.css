@@ -8,7 +8,7 @@ background-size:cover;
   position:absolute;
   font-size: 30px;
   top:1%;
-  left: 35%;
+  left: 30%;
   color:#000;
   text-align:center;
 }
@@ -37,6 +37,7 @@ background-size:cover;
 input{
 	height:30px;
 	width:250px;
+	border: solid 2px;
 }
 input[type="checkbox"]{
 	height:30px;

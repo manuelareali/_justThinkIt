@@ -14,11 +14,6 @@ public class GestisciEventiCaritasController {
 
 	}
 
-	public boolean modificaEvento(int idEve) {
-		return eventDao.modificaEvento(idEve);
-
-	}
-
 	public GestisciEventiCaritasController() {
 		eventDao = new EventoDao();
 	}

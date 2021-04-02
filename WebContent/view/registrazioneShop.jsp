@@ -43,7 +43,7 @@ Class.forName("com.mysql.jdbc.Driver");
 </head>
 <body>
     <a href ="registrazione.jsp"> Indietro </a>
-		<div class = "titolo"><h2>Registrazione Negozio</h2></div>
+		<div class = "titolo"><h2>REGISTRAZIONE NEGOZIO</h2></div>
 	<form action = "registrazioneShop.jsp" name = "reg" method = "POST">
     <div class="Negozio">
   				<h3>Nome Negozio</h3>
@@ -67,8 +67,8 @@ Class.forName("com.mysql.jdbc.Driver");
         <input type="text" id= "RecapitoTel" name= "RecapitoTel" placeholder="es.34324234"/>
         <h3>Email</h3>
         <input type="text" id = "Email"  name="Email" placeholder="es.mariorossi@gmail.com"/>
-         <br/><br/><h3>clothes<input type="checkbox" name="Tipologia" value="Vestiti"/>
-			 <input type="checkbox" name="Tipologia" value="Cibo"/> food </h3>
+         <br/><br/><h3>Vestiti<input type="checkbox" name="Tipologia" value="Vestiti"/>
+			 <input type="checkbox" name="Tipologia" value="Cibo"/> Cibo</h3>
       </div>
       <div class = "box">
 		<br/><h3><button type="submit" name= "COMPLETA REGISTRAZIONE" value="COMPLETA REGISTRAZIONE">COMPLETA REGISTRAZIONE</button></h3>

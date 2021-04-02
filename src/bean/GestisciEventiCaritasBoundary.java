@@ -57,9 +57,6 @@ public class GestisciEventiCaritasBoundary {
 	private Button cancellaEvento;
 
 	@FXML
-	private Button modificaEvento;
-
-	@FXML
 	private Button contattaNegozio;
 
 	@FXML
@@ -71,10 +68,7 @@ public class GestisciEventiCaritasBoundary {
 
 	}
 
-	@FXML
-	void modificaEvent(ActionEvent event) {
-		gestEventC.modificaEvento(this.event.getId());
-	}
+	
 
 	@FXML
 	void backtomenu(ActionEvent event) {

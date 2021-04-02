@@ -196,37 +196,6 @@ public class EventoDao {
         
 	   
    }
-   
-
-   
-   public boolean modificaEvento(int idEve) {
-	   
-	   
-	   int rowAffected;
- 	
-	    String sql = "call modifica_evento(?)";
-
-        try (Connection conn = connector.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-	       	  pstmt.setInt(1, idEve);
-      
-            rowAffected = pstmt.executeUpdate();
-
-            if (rowAffected == 1) {
-                logger.debug(SUCCESS);
-            } else { logger.debug(FAILED); return false;}
-
-
-        } catch (SQLException ex) {
-            logger.debug((ex.getMessage()));
-        }
-		    	
-        return true;
-        
-	   
-	   
-	   
-   }
-   
+     
    
 }

@@ -7,15 +7,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bean.GestisciEventiCaritasBoundary">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bean.GestisciEventiCaritasBoundary">
    <children>
-      <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gli eventi a cui partecipi" wrappingWidth="378.640625">
+      <Text layoutX="39.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventi " wrappingWidth="378.640625">
          <font>
-            <Font size="28.0" />
+            <Font size="36.0" />
          </font>
       </Text>
      
-      <TableView fx:id="tab" layoutX="14.0" layoutY="73.0" onMouseClicked="#eventClicked" prefHeight="361.0" prefWidth="604.0">
+      <TableView fx:id="tab" layoutX="39.0" layoutY="69.0" onMouseClicked="#eventClicked" prefHeight="361.0" prefWidth="604.0">
         <columns>
           <TableColumn fx:id="nomeEvento" prefWidth="87.0" text="Evento" />
           <TableColumn fx:id="nomeNegozio" prefWidth="108.0" text="Negozio" />
@@ -26,9 +26,8 @@
         </columns>
       </TableView>
       
-      <Button fx:id="cancellaEvento" layoutX="632.0" layoutY="121.0" mnemonicParsing="false" onAction="#cancellaEvent" prefHeight="37.0" prefWidth="114.0" text="Cancella Evento" />
-      <Button fx:id="modificaEvento" layoutX="632.0" layoutY="225.0" mnemonicParsing="false" onAction="#modificaEvent" prefHeight="37.0" prefWidth="114.0" text="Modifica Evento" />
-      <Button fx:id="contattaNegozio" layoutX="632.0" layoutY="338.0" mnemonicParsing="false" onAction="#contattaShop" prefHeight="37.0" prefWidth="114.0" text="Contatta Negozio" />
-      <Button fx:id="back" layoutX="14.0" layoutY="466.0" mnemonicParsing="false" onAction="#backtomenu" prefHeight="37.0" prefWidth="97.0" text="Back" />
+      <Button fx:id="cancellaEvento" layoutX="657.0" layoutY="219.0" mnemonicParsing="false" onAction="#cancellaEvent" prefHeight="37.0" prefWidth="114.0" text="Elimina Evento" />
+      <Button fx:id="contattaNegozio" layoutX="657.0" layoutY="267.0" mnemonicParsing="false" onAction="#contattaShop" prefHeight="37.0" prefWidth="114.0" text="Contatta Negozio" />
+      <Button fx:id="back" layoutX="39.0" layoutY="447.0" mnemonicParsing="false" onAction="#backtomenu" prefHeight="37.0" prefWidth="97.0" text="Indietro" />
    </children>
 </AnchorPane>

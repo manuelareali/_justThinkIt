@@ -27,7 +27,7 @@ Class.forName("com.mysql.jdbc.Driver");
 	 				 }
 	 			}
  			}
- 		//}
+ 		
  	
  	
  	 %>	 
@@ -35,15 +35,15 @@ Class.forName("com.mysql.jdbc.Driver");
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Registrazione Caritas</title>
+    <title>REGISTRAZIONE CARITAS</title>
     <link rel="icon" sizes="64x64" href="../img/favicon.png">
     <link rel="stylesheet" href ="../css/registrazioneCaritas.css">
   </head>
   <body>
   	<div class ="ind">
-    <a href ="registrazione.jsp">Indietro </a>
+    	<a href ="registrazione.jsp">INDIETRO </a>
     </div>
-		<div class = "titolo"><h2>Registrazione Caritas</h2></div>
+		<div class = "titolo"><h2>REGISTRAZIONE CARITAS</h2></div>
 	<form action = "registrazioneCaritas.jsp" name = "reg" method = "POST">
     <div class="NomeCaritas">
   				<h3>Nome della Caritas</h3>
@@ -63,8 +63,7 @@ Class.forName("com.mysql.jdbc.Driver");
   <div class = "n"><input type="text" id = "nCivico" name= "nCivico" placeholder="es.54"/></div>
      </div>
      <div class = "fine">
-       <br/><br/><h3>Vestiti<input type="checkbox" name="Tipologia" value="clothes"/>
-			  <input type="checkbox" name="Tipologia" value="food"/> Cibo</h3>
+       <br/><br/><h3>Vestiti<input type="checkbox" name="Tipologia" value="clothes"/> <input type="checkbox" name="Tipologia" value="food"/>Cibo</h3>
 			   <h3>Telefono</h3>
         <input type="text" id= "RecapitoTel" name= "RecapitoTel" placeholder="es.34324234"/>
         		<h3>Email</h3>

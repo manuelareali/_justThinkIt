@@ -24,8 +24,8 @@ public class RegistraCaritasBoundary  {
 		}
 		 else{
 				 regController.completaButtonPressed(nomeCaritas,password,indirizzoCaritas,tipologia,recapitoTel,email,citta);	
+				 return true;
 			 }
-	     return true;
 	}
 
 }

@@ -18,13 +18,24 @@ public class CreaTurnoBoundary {
 	}
 	
 	public boolean creaTurnoPressed(String nomeGiorno, String oraInizio, String oraFine, String  numMaxParte, String note) {
-		if (!nomeGiorno.equals("")  && !oraInizio.equals("") && !oraFine.equals("") && !numMaxParte.equals("")  && !note.equals("") && nomeGiorno != null && oraInizio != null && oraFine != null && numMaxParte != null && note != null) {
+		if (nomeGiorno.equals("") ||   nomeGiorno == null) {
+			return false;
+		} 
+		else if (oraInizio.equals("") || oraInizio == null) {
+			return false;
+		}
+		else if (oraFine.equals("") || numMaxParte == null) {
+			return false;
+		} 
+		else if (note.equals("") || note == null) {
+			return false;
+		}
+		else {
 				CreaTurnoController creaTurno = new CreaTurnoController();
 				creaTurno.creaTurno(caritas, nomeGiorno,oraInizio, oraFine,Integer.parseInt(numMaxParte), note);
 				return true;
+			}
 		}
-		return false;
-	}
 
 
 	public void setCaritas(int caritas) {

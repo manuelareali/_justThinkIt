@@ -17,13 +17,10 @@ public class RegistrazioneVolontarioBoundary{
 
 	
 	public boolean registraVolontarioPressed(String nome, String cognome, String password, String confermaPassword, String via, String recapitoTel, String email, String dataNascita, String citta) {	
-		 if (nome == null || nome.equals("")){
+		 if (nome == null || nome.equals("") || cognome == null || cognome.equals("")){
 			 return false;
 		 }
-		 else if (cognome == null || cognome.equals("")){
-			 return false;
-		 }
-		 else if(password == null || password.equals("")) {
+		 else if(password == null || password.equals("") || confermaPassword == null || cponfermaPassword.equals("")) {
 			 return false;
 		 }
 		 else if (via == null || via.equals("")){

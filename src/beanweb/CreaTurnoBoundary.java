@@ -18,16 +18,19 @@ public class CreaTurnoBoundary {
 	}
 	
 	public boolean creaTurnoPressed(String nomeGiorno, String oraInizio, String oraFine, String  numMaxParte, String note) {
-		if (nomeGiorno.equals("") ||   nomeGiorno == null) {
+		if (nomeGiorno == null || nomeGiorno.equals("")) {
 			return false;
 		} 
-		else if (oraInizio.equals("") || oraInizio == null) {
+		else if ( oraInizio == null || oraInizio.equals("")) {
 			return false;
 		}
-		else if (oraFine.equals("") || numMaxParte == null) {
+		else if (oraFine == null || oraFine.equals("")) {
 			return false;
 		} 
-		else if (note.equals("") || note == null) {
+		else if ( numMaxParte == null || numMaxParte.equals("")) {
+			return false;
+		}
+		else if (note == null || note.equals("")) {
 			return false;
 		}
 		else {

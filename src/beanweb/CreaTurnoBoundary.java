@@ -18,7 +18,7 @@ public class CreaTurnoBoundary {
 	}
 	
 	public boolean creaTurnoPressed(String nomeGiorno, String oraInizio, String oraFine, String  numMaxParte, String note) {
-		if (nomeGiorno != null && !nomeGiorno.equals("") && oraInizio != null && !oraInizio.equals("") && !oraFine.equals("") && oraFine != null && !numMaxParte.equals("") && numMaxParte != null && note != null && !note.equals("")) {
+		if (!nomeGiorno.equals("")  && !oraInizio.equals("") && !oraFine.equals("") && !numMaxParte.equals("")  && !note.equals("")) {
 			CreaTurnoController creaTurno = new CreaTurnoController();
 			creaTurno.creaTurno(caritas, nomeGiorno,oraInizio, oraFine,Integer.parseInt(numMaxParte), note);
 			return true;

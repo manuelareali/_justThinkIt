@@ -38,7 +38,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>PROMUOVI EVENTO</title>
-<link rel="stylesheet" href ="../css/promuoviEventoMap.css">
+<link rel="stylesheet" href ="../css/promuoviEventoMaps.css">
 </head>
 <body>
 <form action = "promuoviEventoMap.jsp" name = "reg" method = "POST">

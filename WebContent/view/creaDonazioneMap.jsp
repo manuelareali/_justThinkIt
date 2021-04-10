@@ -33,7 +33,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>DONAZIONE</title>
-<link rel="stylesheet" href ="../css/creaDonazioneMap.css">
+<link rel="stylesheet" href ="../css/creaDonazioneMappa.css">
 </head>
 <body>
 	<form action = "creaDonazioneMap.jsp" name = "reg" method = "POST">

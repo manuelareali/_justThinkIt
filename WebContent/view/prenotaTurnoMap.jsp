@@ -13,7 +13,7 @@ Class.forName("com.mysql.jdbc.Driver");
 
 
 %>
-	<jsp:forward page="NewMap.jsp"/>
+	<jsp:forward page="map.jsp"/>
 <%
 		}}
 %>
@@ -23,7 +23,7 @@ Class.forName("com.mysql.jdbc.Driver");
 <head>
 <meta charset="ISO-8859-1">
 <title>PRENOTA TURNO</title>
-<link rel="stylesheet" href ="../css/prenotaTurnoMap.css">
+<link rel="stylesheet" href ="../css/prenotaTurnoMappa.css">
 </head>
 <body>
 		<form action = "prenotaTurnoMap.jsp" name = "reg" method = "POST">

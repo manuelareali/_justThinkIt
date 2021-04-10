@@ -73,8 +73,9 @@ else if(CercaCaritas.getInstance().trovaRuoloBean().equalsIgnoreCase("Negozio"))
 	<button id = "necessita" name = "necessita" style="visibility:hidden ;position: absolute; top:42%; left: 1%; border: 1px solid red; background: red; color:white; height:40px; width:150px; font-weight:bold; font-size: 14px; ">VEDI BACHECA</button>
 	<button id = "promuoviEvento" name = "promuoviEvento" style="visibility:hidden ;position: absolute; top:49%; left: 1%; border: 1px solid red; background: red; color:white; height:40px; width:150px; font-weight:bold; font-size: 14px;">PROMUOVI EVENTO</button>
 
+	<div class = "ind">
 	 <a href= "homeNegozio.jsp">INDIETRO</a>
-	
+	</div>
 <script>tipoUtente = "Negozio";</script>	
 <%}%>
 

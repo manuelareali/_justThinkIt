@@ -35,7 +35,7 @@ Class.forName("com.mysql.jdbc.Driver");
 <head>
 <meta charset="ISO-8859-1">
 <title>BACHECA CARITAS</title>
-<link rel="stylesheet" href ="../css/bachecaCaritasMap.css">
+<link rel="stylesheet" href ="../css/bachecaCaritasMappa.css">
 </head>
 <body>
 <form action = "bachecaCaritasMap.jsp" name = "reg" method = "POST">

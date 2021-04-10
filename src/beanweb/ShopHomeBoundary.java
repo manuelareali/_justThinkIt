@@ -36,8 +36,7 @@ public class ShopHomeBoundary {
 
 
 	public void initData(int id, String nome) {
-		this.idShop = id;
-    	//nomeCognome.setText(nome);	
+		this.idShop = id;	
 	}
 
 

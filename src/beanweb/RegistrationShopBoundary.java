@@ -12,7 +12,7 @@ public class RegistrationShopBoundary{
 
 
 	public boolean registraNegozioPressed(String tipologia, String nomeNegozio,String password, String indirizzoNeg, String recapitoTel, String email, String citta){
-    	if (nomeNegozio == null || nomeNegozio.equals("") || password == null || password.equals("") ||indirizzoNeg == null || indirizzoNeg.equals("") || recapitoTel == null || recapitoTel.equals("")|| email == null ||email.equals("") || citta == null || citta.equals("")) {
+    	if (nomeNegozio == null || nomeNegozio.equals("") || password == null || password.equals("") ||indirizzoNeg == null || indirizzoNeg.equals("") || recapitoTel == null || recapitoTel.equals("")|| email == null  ||  email.equals("")|| citta == null || citta.equals("")) {
     		return false;    		
     	}
     	else {

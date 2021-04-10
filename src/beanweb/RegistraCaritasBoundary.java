@@ -19,7 +19,7 @@ public class RegistraCaritasBoundary  {
 	
 
 	public boolean completaButtonPressed(String nomeCaritas, String password, String indirizzoCaritas, String tipologia, String recapitoTel, String email, String citta ) throws SQLException{
-		 if (nomeCaritas == null || nomeCaritas.equals("") || password == null || password.equals("") || indirizzoCaritas == null || indirizzoCaritas.equals("")|| recapitoTel == null || recapitoTel.equals("") || email.equals("") || email == null || citta == null || citta.equals("")) {
+		 if (nomeCaritas == null || nomeCaritas.equals("") || password == null || password.equals("") || indirizzoCaritas == null || indirizzoCaritas.equals("")|| recapitoTel == null || recapitoTel.equals("") || email == null || email.equals("") || citta == null || citta.equals("")) {
 			 return false;
 		}
 		 else{

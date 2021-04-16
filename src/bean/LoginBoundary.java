@@ -20,15 +20,14 @@ import javafx.stage.Stage;
 public class LoginBoundary {
 
 	private static Logger logger = LoggerFactory.getLogger(LoginBoundary.class.getName());
+	//può essere tolta la stringa
 	private String s = "errore IoException";
 
 	private LoginController loginC = new LoginController();
 
 
 	private ShopHomeBoundary shopHomeBoundary;
-	
-
-
+	private CaritasHomeBoundary caritasHomeBoundary;
 
 	@FXML
 	private TextField usernameField;
@@ -42,18 +41,18 @@ public class LoginBoundary {
 	@FXML
 	private Button registerButton;
 
-	UserHomeBoundary userHomeBoundary = null;
-	
 	@FXML
-	void loginPressed(ActionEvent event) {	
-		CaritasHomeBoundary caritasHomeBoundary;
+	void loginPressed(ActionEvent event) {
+
 		int idUser = loginC.trovaID(usernameField.getText());
 		String loggedUser = loginC.loginAccess(usernameField.getText(), passwordField.getText());
 		if (loggedUser.equalsIgnoreCase("Volontario")) {
-			
+
 			try {
+				
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/UserHomePage.fxml"));
 				Parent root = loader.load();
+				UserHomeBoundary userHomeBoundary = null;
 				userHomeBoundary = userHomeBoundary.getInstance();
 				userHomeBoundary = loader.getController();
 				UserHomeController userHomeController = new UserHomeController();

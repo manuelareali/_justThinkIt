@@ -48,6 +48,8 @@ import java.util.List;
 
 public class CercaCaritas {
 
+	
+	
 	public enum MarkerType {
 		CARITAS, EVENTO, DONAZIONE, MAP
 	}
@@ -280,6 +282,7 @@ public class CercaCaritas {
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		}
+	
 
 	}
 
@@ -373,7 +376,7 @@ public class CercaCaritas {
 
 	}
 
-
+	// molto da cambiare
 
 	public CercaCaritas() throws NumberFormatException, SQLException {	
 		cercaController = new CercaCaritasController();
@@ -411,7 +414,7 @@ public class CercaCaritas {
 	
 		logger.trace("begin initialize");
 
-     
+//	     
 		mapView.setCustomMapviewCssURL(getClass().getResource("/custom_mapview.css"));
 
 		leftControls.setExpandedPane(optionsLocations);
@@ -647,9 +650,9 @@ public class CercaCaritas {
 	}
 
 	public void updateButtonsBox(MarkerType markerType) {
-		for (Node node : listaBottoniOld) {
-			if (!listaBottoni.contains(node)) {
-				listaBottoni.add(node);
+		for (Node n : listaBottoniOld) {
+			if (!listaBottoni.contains(n)) {
+				listaBottoni.add(n);
 			}
 		}
 

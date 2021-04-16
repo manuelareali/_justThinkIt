@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<??xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.control.Icon?>
 <?import javafx.scene.Cursor?>
@@ -69,3 +69,4 @@
       <Line endX="606.0" endY="1.1444091796875E-5" layoutY="52.0" startX="-100.0" />
    </children>
 </AnchorPane>
+

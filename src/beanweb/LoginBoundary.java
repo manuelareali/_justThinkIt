@@ -47,25 +47,26 @@ public class LoginBoundary {
 
 
 	public String loginPressed(String username, String password) {
-		beanweb.CaritasHomeBoundary caritasHomeBoundary = new CaritasHomeBoundary();
-		int idUser = loginC.trovaID(username);
-		String loggedUser = loginC.loginAccess(username, password);
-		if (loggedUser.equalsIgnoreCase("Volontario")) {
-			userHomeBoundary = userHomeBoundary.getInstance();				
-			userHomeController = new UserHomeController();
-			userHomeController.initDataCont(idUser, userHomeBoundary);
-		} else if (loggedUser.equalsIgnoreCase("Caritas")) {
-			caritasHomeBoundary = caritasHomeBoundary.getInstance();
-			CaritasHomeController caritasHomeController = new CaritasHomeController();
-			caritasHomeController.initDataCaritas(idUser, caritasHomeBoundary);
-				
-		} else if (loggedUser.equalsIgnoreCase("Negozio")) {
+		if(username != null && !username.equals("") && password != null && !password.equals("")){
+			beanweb.CaritasHomeBoundary caritasHomeBoundary = new CaritasHomeBoundary();
+			int idUser = loginC.trovaID(username);
+			String loggedUser = loginC.loginAccess(username, password);
+			if (loggedUser.equalsIgnoreCase("Volontario")) {
+				userHomeBoundary = userHomeBoundary.getInstance();				
+				userHomeController = new UserHomeController();
+				userHomeController.initDataCont(idUser, userHomeBoundary);
+			} else if (loggedUser.equalsIgnoreCase("Caritas")) {
+				caritasHomeBoundary = caritasHomeBoundary.getInstance();
+				CaritasHomeController caritasHomeController = new CaritasHomeController();
+				caritasHomeController.initDataCaritas(idUser, caritasHomeBoundary);
+			} else if (loggedUser.equalsIgnoreCase("Negozio")) {
 				shopHomeBoundary = shopHomeBoundary.getInstance();
 				ShopHomeController shopHomeC = new ShopHomeController();
 				shopHomeC.initDataShop(idUser, shopHomeBoundary);
+			}
+			return loggedUser;
 		}
-		return loggedUser;
-
+		return username;
 	}
 }
 

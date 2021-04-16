@@ -14,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -29,7 +28,14 @@ private int userId;
 	
 	private UserHomeController userController ;
 
-
+	
+	//Images slideshow
+/*	private Image img1 ;
+	private Image img2;
+	private Image img3;
+	private Image[] images = {img1, img2, img3};
+	private int currentImage;*/
+	
 	
 	
 	public static UserHomeBoundary getInstance() {
@@ -40,6 +46,13 @@ private int userId;
 	}
 	
 	
+	public UserHomeBoundary() {
+		/*img1 = new Image("file:/C:/Users/PRX/Desktop/TZEDAKAH/DragoInizio/DragoForestain.PNG");
+		
+		 currentImage = 0;
+		 userController = new UserHomeController();
+	*/
+	}
 	
 	@FXML
     private Text nomeCognome;
@@ -69,6 +82,7 @@ private int userId;
     
     @FXML
     void deleteAccountButtonPressed(ActionEvent event) {
+    		//lo faremo presto
     	this.userController.deleteAccount(userId);
     }
 
@@ -91,6 +105,11 @@ private int userId;
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		}
+    }
+
+    @FXML
+    void helpButtonPressed(ActionEvent event) {
+    	this.userController.helpButtonPressed();
     }
 
  
@@ -117,11 +136,11 @@ private int userId;
 
 	public void initData(String nome, String cognome, int id) {
      	this.nomeCognome.setText(nome + " "+ cognome);
-    	final Circle clip = new Circle();
+    /*	final Circle clip = new Circle();
     	clip.setCenterX(25);
     	clip.setCenterY(58);
     	clip.setRadius(200);
-        this.profileImage.setClip(clip);
+        this.profileImage.setClip(clip);*/
         this.userId = id;
   
     }

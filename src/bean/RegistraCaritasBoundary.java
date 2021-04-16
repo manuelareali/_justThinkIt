@@ -59,17 +59,9 @@ public class RegistraCaritasBoundary implements Initializable {
 	@FXML
 	private CheckBox type2;
 
-	@FXML
-	private TextField nomeResp;
-
-	@FXML
-	private TextField cognomeResp;
-
+	
 	@FXML
 	private Button completaButton;
-
-	@FXML
-	private TextField codiceFiscaleResp;
 
 	@FXML
 	private PasswordField passwordCaritas;
@@ -122,21 +114,25 @@ public class RegistraCaritasBoundary implements Initializable {
 
 	public int checker() {
 		pageSwitch = new TransizionePagine();
+		// Controlla che non ci siano campi lasciati vuoti
 		if(!pageSwitch.checkerText(textFields)) {
 			passwordMatch.setText("Alcuni campi sono vuoti");
 			passwordMatch.setVisible(true);
 		}
 			if (type.isSelected()) {
 				tipo = "Vestiti";
-				return 0;
+				return 0; // Almeno uno dei tipi deve essere selezionato
 
 			} else if (type2.isSelected()) {
 				tipo = "Cibo";
 				passwordMatch.setText("Alcuni campi sono vuoti 2");
 				passwordMatch.setVisible(true);
-				return 0;
+				return 0; // Almeno uno dei tipi deve essere selezionato
 			}
 		
+
+		// Valida che i campi password e conferma password siano uguali
+
 		if (passwordCaritas.getText().equals(confermaPassCaritas.getText())) {
 			passwordMatch.setVisible(false);
 			return 0;
@@ -151,9 +147,9 @@ public class RegistraCaritasBoundary implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		passwordMatch.setVisible(false);
-		textFields = new TextField[] { cittadiResidenza, via, civico, telefono, nomeCaritas, email, nomeResp,
-				cognomeResp, codiceFiscaleResp };
+		textFields = new TextField[] { cittadiResidenza, via, civico, telefono, nomeCaritas, email };
 
 	}
+
 
 }

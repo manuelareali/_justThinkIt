@@ -1,0 +1,130 @@
+@charset "ISO-8859-1";
+body{
+background-image:URL("../img/colori.jpg");
+background-size:cover;
+}
+
+body{
+	margin: 0;
+	padding:0;
+	font-family: sans-serif;
+	background: linear-gradinent(#E0EAFC,#CFDEF3);
+	height:100vh;
+}
+
+
+.header{
+	height: 60px;
+	background: red;
+	overflow: hidden;
+	border-radius: 3px 3px 0 0;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);	
+}
+
+.header h2{
+	position:absolute;
+	left:580px;
+	text-align:center;
+	color:white;
+}
+
+a{
+	position:absolute;
+	font-size:24px;
+	text-decoration:none;
+	line-height:20px;
+	color: blue;
+	top:90%;
+	left:7%;
+}
+
+a:hover{
+	color: yellow;
+}
+
+.titolo{
+	position:absolute;
+	top:6%;
+	left:22%;
+	font-family: Verdana;
+	font-weight: bold;
+	text-align:left;
+	font-size:22px;
+	color: black;
+}
+
+.box button[type="submit"]
+{
+	position: absolute;
+	left: 73%;
+	top:88%;
+	border: none;
+	outline:none;
+	height: 40px;
+	background:red;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+
+
+.box button[type="submit"]:hover
+{
+	cursor: pointer;
+	background: yellow;
+	color: #000;
+}
+input{
+	height:30px;
+	width:250px;
+	border: solid 2px;
+}
+
+.Volontario{
+  position:absolute;
+  font-size: 20px;
+  top:24%;
+  left: 10%;
+  color:#000;
+  text-align:center;
+}
+
+.residenza{
+  position:absolute;
+  font-size: 20px;
+  top:24%;
+  left: 30%;
+  color:#000;
+  text-align:center;
+}
+.pass{
+  position:absolute;
+  font-size: 20px;
+  top:24%;
+  left: 70%;
+  color:#000;
+  text-align:center
+}
+
+.fine{
+  position:absolute;
+  font-size: 20px;
+  top:24%;
+  left: 50%;
+  color:#000;
+  text-align:center;
+}
+
+.via input{
+	height:30px;
+	width:240px;
+}
+
+.n input{
+	position: absolute;
+	height:30px;
+	width:30px;
+	top:89.1%;
+	left:85%;
+}

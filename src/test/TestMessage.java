@@ -18,5 +18,4 @@ public class TestMessage {
 		assertEquals(0,emailController.sendMessageController("c", "R", "testbello", "Test"));
 	}
 	
-	
 }

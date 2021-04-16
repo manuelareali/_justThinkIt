@@ -12,7 +12,7 @@ public class DonationController {
 	private DonationDao donazioneDao;
 
 	
-	private DonationController() {
+	public DonationController() {
 		donazione = new Donazione();
 		donazioneDao = new DonationDao();
 	}

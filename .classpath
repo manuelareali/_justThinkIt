@@ -14,10 +14,10 @@
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/selenium/libs/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/selenium/client-combined-3.141.59.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/selenium/client-combined-3.141.59-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Desktop/prova/trunk/trunk/logback-classic-1.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Desktop/prova/trunk/trunk/logback-core-1.2.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Desktop/prova/trunk/trunk/mapjfx-1.33.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Desktop/prova/trunk/trunk/mapjfx-demo-1.33.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Desktop/prova/trunk/trunk/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/jar/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/jar/logback-core-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/jar/mapjfx-1.33.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/jar/mapjfx-demo-1.33.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/jar/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

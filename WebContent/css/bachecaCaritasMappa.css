@@ -1,0 +1,158 @@
+@charset "ISO-8859-1";
+body{
+background-image:URL("../img/mani.jpg");
+background-size:cover;
+}
+
+body{
+	margin: 0;
+	padding:0;
+	font-family: sans-serif;
+	background: linear-gradinent(#E0EAFC,#CFDEF3);
+	height:100vh;
+}
+
+
+.header{
+	height: 60px;
+	background: red;
+	overflow: hidden;
+	border-radius: 3px 3px 0 0;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);	
+}
+
+.header h2{
+	position:absolute;
+	left:580px;
+	text-align:center;
+	color:white;
+}
+
+
+h1{
+	position:absolute;
+	top:8%;
+	left:12%;
+	font-family: Verdana;
+	font-weight: bold;
+	text-align:left;
+	font-size:40px;
+	color: black;
+}
+
+.contatta button[type="submit"]
+{
+	position:absolute;
+	border-color:white;
+	top:40%;
+	left:65%;
+	height: 50px;
+	width:250px;
+	outline:none;
+	background: red;
+	color: #fff;
+	border-radius: 10px;
+	font-weight:bold;
+	font-size:20px;
+	cursor:pointer;	
+}
+
+.contatta button[type="submit"]:hover
+{
+	cursor: pointer;
+	background: yellow;
+	color: #000;
+}
+
+
+.donazione button[type="submit"]:hover
+{
+	cursor: pointer;
+	background:yellow;
+	color: #000;
+}
+
+.donazione button[type="submit"]
+{
+	position:absolute;
+	border-color:white;
+	top:88%;
+	left:75%;
+	height: 50px;
+	width:250px;
+	outline:none;
+	background: red;
+	color: #fff;
+	border-radius: 10px;
+	font-weight:bold;
+	font-size:20px;
+	cursor:pointer;	
+}
+
+.donazione button[type="submit"]:hover
+{
+	cursor: pointer;
+	background: yellow;
+	color: #000;
+}
+
+.ind a{
+	position:absolute;
+	font-size:25px;
+	font-weight:bold;
+	top:90%;
+	left:8%;
+	color:blue;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color:rgb(6, 255, 0);
+}
+
+
+.content-table {
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width:200px;
+  max-width:650px;
+  height:150px;
+   font-weight: bold;
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 3px 3px 3px 3px;
+}
+
+.content-table thead tr {
+  color:red;
+  text-align: left;
+  font-weight: bold;
+  font-size:16px;
+}
+
+
+.content-table th,
+.content-table td {
+  padding: 15px 20px ;
+}
+
+
+.content-table  th,
+.content-table tbody tr {
+  border-bottom: 1px solid black;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 1px solid ;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+ 
+}
+
+.tab{
+	position:absolute;
+	top:34%;
+	left:12%;
+}

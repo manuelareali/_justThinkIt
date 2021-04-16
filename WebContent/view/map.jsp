@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="stylesheet" href="../css/map.css" />
+      <link rel="stylesheet" href="../css/maps.css" />
       <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>

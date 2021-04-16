@@ -72,7 +72,7 @@
 	<p>Se uscirai dovrai effettuare un nuovo accesso.</p>
 	</div>
 	<div class="ok">
-	<a href = ""><button type="submit" name= "" value="">OK</button></a>
+	<a href = "log.jsp"><button type="submit" name= "" value="">OK</button></a>
 	</div>	
 	<div class="annulla">
 	<a href =  "homeVolontario.jsp"><button type="submit" name= "" value="">ANNULLA</button></a>

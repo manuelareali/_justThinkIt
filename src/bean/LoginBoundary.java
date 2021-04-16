@@ -28,7 +28,8 @@ public class LoginBoundary {
 
 	private ShopHomeBoundary shopHomeBoundary;
 	private CaritasHomeBoundary caritasHomeBoundary;
-
+	private UserHomeBoundary userHomeBoundary;
+	
 	@FXML
 	private TextField usernameField;
 
@@ -52,8 +53,7 @@ public class LoginBoundary {
 				
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/UserHomePage.fxml"));
 				Parent root = loader.load();
-				UserHomeBoundary userHomeBoundary = null;
-				userHomeBoundary = userHomeBoundary.getInstance();
+				userHomeBoundary =  userHomeBoundary.getInstance();
 				userHomeBoundary = loader.getController();
 				UserHomeController userHomeController = new UserHomeController();
 				userHomeController.initDataCont(idUser, userHomeBoundary);

@@ -2,7 +2,7 @@ package exception;
 
 public class Trigger {
 
-	public void MyTrigger() throws MyException{
+	public void myTrigger() throws MyException{
 		throw new MyException("");
 	}
 }

@@ -35,7 +35,7 @@ public class RegistraCaritasBoundary implements Initializable {
 	private String tipo;
 
 	private Trigger trigger;
-	
+
 	@FXML
 	private TextField cittadiResidenza;
 
@@ -91,8 +91,9 @@ public class RegistraCaritasBoundary implements Initializable {
 	@FXML
 	public void completaButtonPressed(ActionEvent event) throws SQLException {
 		int resCheck = checker();
-		try {
-			if (resCheck != -1) {
+		if (resCheck != -1) {
+			try {
+
 				int caritas = regController.completaButtonPressed(nomeCaritas.getText(), passwordCaritas.getText(),
 						via.getText(), tipo, telefono.getText(), email.getText(), cittadiResidenza.getText());
 
@@ -106,16 +107,17 @@ public class RegistraCaritasBoundary implements Initializable {
 
 				home.show();
 
-			}else {
-				try {
-					trigger.MyTrigger();
-				}catch(MyException e) {
-					logger.error("Campi vuoti");
-				}
+			} catch (IOException e) {
+				logger.error(e.getMessage());
 			}
-		} catch (IOException e) {
-			logger.error(e.getMessage());
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("Campi vuoti");
+			}
 		}
+
 	}
 
 	public int checker() {
@@ -131,8 +133,8 @@ public class RegistraCaritasBoundary implements Initializable {
 
 		} else if (type2.isSelected()) {
 			tipo = "Cibo";
-			
-		}else {
+
+		} else {
 			passwordMatch.setText("Alcuni campi sono vuoti 2");
 			passwordMatch.setVisible(true);
 			return -1; // Almeno uno dei tipi deve essere selezionato

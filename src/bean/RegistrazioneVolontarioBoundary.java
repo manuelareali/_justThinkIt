@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import controller.RegistrazioneVolontarioController;
 import controller.UserHomeController;
+import exception.MyException;
+import exception.Trigger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,94 +28,92 @@ public class RegistrazioneVolontarioBoundary implements Initializable {
 	private RegistrazioneVolontarioController regC;
 
 	private TextField[] text;
-	
 
-	
-	    @FXML
-	    private TextField cittaRes;
+	private static Logger logger = LoggerFactory.getLogger(RegistrazioneVolontarioBoundary.class.getName());
 
-	    @FXML
-	    private TextField via;
+	@FXML
+	private TextField cittaRes;
 
-	    @FXML
-	    private TextField civico;
+	@FXML
+	private TextField via;
 
-	    @FXML
-	    private TextField tel;
+	@FXML
+	private TextField civico;
 
-	    @FXML
-	    private TextField mail;
+	@FXML
+	private TextField tel;
 
-	    @FXML
-	    private TextField nome;
+	@FXML
+	private TextField mail;
 
-	    @FXML
-	    private TextField cognome;
+	@FXML
+	private TextField nome;
 
-	    @FXML
-	    private Button completaReg;
+	@FXML
+	private TextField cognome;
 
-	    @FXML
-	    private TextField codiceFisc;
+	@FXML
+	private Button completaReg;
 
-	    @FXML
-	    private Button backButton;
+	@FXML
+	private TextField codiceFisc;
 
-	    @FXML
-	    private PasswordField password;
+	@FXML
+	private Button backButton;
 
-	    @FXML
-	    private PasswordField confermaPass;
+	@FXML
+	private PasswordField password;
 
-	    @FXML
-	    private Text passwordMatch;
+	@FXML
+	private PasswordField confermaPass;
 
+	@FXML
+	private Text passwordMatch;
 
-	    @FXML
-	    private TextField date;
-	  
+	@FXML
+	private TextField date;
 
-
-
+	private Trigger trigger;
 
 	public RegistrazioneVolontarioBoundary() {
 		regC = new RegistrazioneVolontarioController();
+		trigger = new Trigger();
 	}
 
 	@FXML
 	void backButtonPres(ActionEvent event) {
 		TransizionePagine pageswitch = new TransizionePagine();
-		String pagina= "/boundary/RegistrazioneMenu.fxml";
+		String pagina = "/boundary/RegistrazioneMenu.fxml";
 		Window stage = backButton.getScene().getWindow();
 		pageswitch.visualizzaPagina(pagina, stage);
-	  
 
 	}
 
 	@FXML
 	void registraVolontarioPressed(ActionEvent event) {
-
 		if (checker() == 0) {
-		int idVol =	regC.completaButtonPressed( nome.getText(), cognome.getText(),
-					password.getText(), via.getText(), tel.getText(), mail.getText(), date.getText(),
-					cittaRes.getText());
-		 Logger logger = LoggerFactory.getLogger(RegistrazioneVolontarioBoundary.class.getName());
-		
 			try {
-    			FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/UserHomePage.fxml"));
-    			Parent root = loader.load();
-    			UserHomeBoundary userHomeBoundary = loader.getController();
-    			UserHomeController userHomeC = new UserHomeController();
-    			userHomeC.initDataCont(idVol, userHomeBoundary);
-    			Stage home = (Stage) completaReg.getScene().getWindow();
-    			home.setScene(new Scene(root, 800, 600));
-    			
-    			home.show();
-    		} catch (IOException e) {
-    			logger.error(e.getMessage());
-    		}
-    	
+				int idVol = regC.completaButtonPressed(nome.getText(), cognome.getText(), password.getText(),
+						via.getText(), tel.getText(), mail.getText(), date.getText(), cittaRes.getText());
 
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/UserHomePage.fxml"));
+				Parent root = loader.load();
+				UserHomeBoundary userHomeBoundary = loader.getController();
+				UserHomeController userHomeC = new UserHomeController();
+				userHomeC.initDataCont(idVol, userHomeBoundary);
+				Stage home = (Stage) completaReg.getScene().getWindow();
+				home.setScene(new Scene(root, 800, 600));
+
+				home.show();
+			} catch (IOException e) {
+				logger.error(e.getMessage());
+			}
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("Alcuni campi sono vuoti");
+			}
 		}
 
 	}

@@ -54,8 +54,9 @@ public class LoginBoundary {
 
 		int idUser = loginC.trovaID(usernameField.getText());
 		String loggedUser = loginC.loginAccess(usernameField.getText(), passwordField.getText());
-		try {
-			if (loggedUser != null) {
+		if (loggedUser != null) {
+			try {
+
 				if (loggedUser.equalsIgnoreCase("Volontario")) {
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/UserHomePage.fxml"));
 					Parent root = loader.load();
@@ -97,15 +98,15 @@ public class LoginBoundary {
 
 					home.show();
 				}
-			} else {
-				try {
-					trigger.MyTrigger();
-				} catch (MyException e) {
-					logger.error("L'utente non è registato");
-				}
+			} catch (IOException e) {
+				logger.error(s);
 			}
-		} catch (IOException e) {
-			logger.error(s);
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("L'utente non è registato");
+			}
 		}
 
 	}

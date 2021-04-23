@@ -9,12 +9,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import connector.Connector;
+import exception.Trigger;
 
 public class LoginDao {
 	final Connector connector;
     private String tableUser;
     private static final Logger logger = LoggerFactory.getLogger(LoginDao.class);
 
+      
     
     
 	  public String getTableUser() {
@@ -27,7 +29,6 @@ public class LoginDao {
 	
 	
 	public LoginDao() {
-		
 		this.connector = new Connector("jdbc:mysql://127.0.0.1:3306/Justthinkit", "root", "password");
 	}
 	
@@ -64,7 +65,7 @@ public class LoginDao {
        	 if( returnePriv != null) {
  			setTableUser(returnePriv);
        	 }
-				return returnePriv;
+       	 	return returnePriv;
 	    }
 
 

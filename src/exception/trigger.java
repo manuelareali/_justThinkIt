@@ -1,8 +1,8 @@
 package exception;
 
-public class trigger {
+public class Trigger {
 
-	public void myTrigger() throws myException{
-		throw new myException("");
+	public void MyTrigger() throws MyException{
+		throw new MyException("");
 	}
 }

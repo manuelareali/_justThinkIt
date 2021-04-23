@@ -793,10 +793,7 @@ public class CercaCaritas {
 		}
 
 	}
-	private void moveMarkerPosition() {
-		
-	}
-
+	
 	
 	private void setControlsDisable(boolean flag) {
 		topControls.setDisable(flag);

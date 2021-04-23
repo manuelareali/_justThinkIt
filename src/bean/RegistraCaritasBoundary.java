@@ -123,7 +123,7 @@ public class RegistraCaritasBoundary implements Initializable {
 	public int checker() {
 		pageSwitch = new TransizionePagine();
 		// Controlla che non ci siano campi lasciati vuoti
-		if (pageSwitch.checkerText(textFields) == false) {
+		if (pageSwitch.checkerText(textFields)) {
 			passwordMatch.setText("Alcuni campi sono vuoti");
 			passwordMatch.setVisible(true);
 		}

@@ -602,7 +602,7 @@ public class CercaCaritas {
 			if (markerClick.getVisible()) {
 				final Coordinate oldPosition = markerClick.getPosition();
 
-				animateClickMarker(oldPosition, newPosition);
+			
 
 				markerClick.setPosition(newPosition);
 				// adding can only be done after coordinate is set
@@ -757,19 +757,7 @@ public class CercaCaritas {
 				}
 			}
 
-			if (ruolo.equalsIgnoreCase(c)) {
-				switch (btn.getId()) {
-				case EVE:
-				case PRO:
-				case TURN:
-				case ALL:
-
-					listaBottoniDaRimuovere.add(btn);
-					break;
-				default:
-					break;
-				}
-			}
+	
 
 			if (ruolo.equalsIgnoreCase(n)) {
 				switch (btn.getId()) {
@@ -815,28 +803,8 @@ public class CercaCaritas {
 		}
 
 	}
-
-	private void animateClickMarker(Coordinate oldPosition, Coordinate newPosition) { // animate the marker to the new
-																						// position final Transition
-		Transition transition = new Transition() {
-			private final Double oldPositionLongitude = oldPosition.getLongitude();
-			private final Double oldPositionLatitude = oldPosition.getLatitude();
-			private final double deltaLatitude = newPosition.getLatitude() - oldPositionLatitude;
-			private final double deltaLongitude = newPosition.getLongitude() - oldPositionLongitude;
-
-			{
-				setCycleDuration(Duration.seconds(1.0));
-				setOnFinished(evt -> markerClick.setPosition(newPosition));
-			}
-
-			@Override
-			protected void interpolate(double v) {
-				final double latitude = oldPosition.getLatitude() + v * deltaLatitude;
-				final double longitude = oldPosition.getLongitude() + v * deltaLongitude;
-				markerClick.setPosition(new Coordinate(latitude, longitude));
-			}
-		};
-		transition.play();
+	private void moveMarkerPosition() {
+		
 	}
 
 	

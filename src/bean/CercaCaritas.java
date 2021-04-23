@@ -12,7 +12,7 @@ import controller.UserHomeController;
 import entity.MarkerID;
 
 
-import javafx.animation.Transition;
+
 
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
@@ -37,7 +37,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.IOException;
@@ -64,7 +64,6 @@ public class CercaCaritas {
 	private String ruolo;
 	private int idUser;
 	private String v = "Volontario";
-	private String c = "Caritas";
 	private String n = "Negozio";
 	
 	/** logger for the class. */

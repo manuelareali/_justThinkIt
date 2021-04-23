@@ -481,8 +481,8 @@ public class CercaCaritas {
 		mapTypeGroup.selectToggle(radioMsOSM);
 
 		setupEventHandlers();
-
-		if (this.ruolo.equalsIgnoreCase(v)) {
+		switch (this.ruolo) {
+		case "Volontario":
 			for (MarkerID markerEvento : markerEventi) {
 				checkEventoMarker.setGraphic(new ImageView(
 						new Image(markerEvento.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
@@ -506,9 +506,9 @@ public class CercaCaritas {
 					new ImageView(new Image(markerClick.getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
 			checkClickMarker.selectedProperty().bindBidirectional(markerClick.visibleProperty());
 
-		}
-		if (this.ruolo.equalsIgnoreCase(n)) {
-			// add the graphics to the checkboxes
+			break;
+			
+		case "Negozio":
 			for (MarkerID markerCaritas2 : markerCaritas) {
 				checkCaritasMarker.setGraphic(new ImageView(
 						new Image(markerCaritas2.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
@@ -518,7 +518,10 @@ public class CercaCaritas {
 			checkClickMarker.setGraphic(
 					new ImageView(new Image(markerClick.getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
 			checkClickMarker.selectedProperty().bindBidirectional(markerClick.visibleProperty());
-		} else {
+	
+			break;
+			
+		case "Caritas":
 
 			for (MarkerID markerEvento : markerEventi) {
 				checkEventoMarker.setGraphic(new ImageView(
@@ -543,7 +546,76 @@ public class CercaCaritas {
 					new ImageView(new Image(markerClick.getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
 			checkClickMarker.selectedProperty().bindBidirectional(markerClick.visibleProperty());
 
+		
+			
+			break;
+			
+		default:
+			break;
 		}
+
+//		if (this.ruolo.equalsIgnoreCase(v)) {
+//			for (MarkerID markerEvento : markerEventi) {
+//				checkEventoMarker.setGraphic(new ImageView(
+//						new Image(markerEvento.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkEventoMarker.selectedProperty().bindBidirectional(markerEvento.getMarker().visibleProperty());
+//			}
+//
+//			for (MarkerID markerCaritas2 : markerCaritas) {
+//				checkCaritasMarker.setGraphic(new ImageView(
+//						new Image(markerCaritas2.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkCaritasMarker.selectedProperty().bindBidirectional(markerCaritas2.getMarker().visibleProperty());
+//			}
+//			for (MarkerID markerDonazione : markerDonazioni) {
+//				checkDonazioneMarker.setGraphic(new ImageView(
+//						new Image(markerDonazione.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkDonazioneMarker.selectedProperty()
+//						.bindBidirectional(markerDonazione.getMarker().visibleProperty());
+//
+//			}
+//
+//			checkClickMarker.setGraphic(
+//					new ImageView(new Image(markerClick.getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//			checkClickMarker.selectedProperty().bindBidirectional(markerClick.visibleProperty());
+//
+//		}
+//		if (this.ruolo.equalsIgnoreCase(n)) {
+//			// add the graphics to the checkboxes
+//			for (MarkerID markerCaritas2 : markerCaritas) {
+//				checkCaritasMarker.setGraphic(new ImageView(
+//						new Image(markerCaritas2.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkCaritasMarker.selectedProperty().bindBidirectional(markerCaritas2.getMarker().visibleProperty());
+//			}
+//
+//			checkClickMarker.setGraphic(
+//					new ImageView(new Image(markerClick.getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//			checkClickMarker.selectedProperty().bindBidirectional(markerClick.visibleProperty());
+//		} else {
+//
+//			for (MarkerID markerEvento : markerEventi) {
+//				checkEventoMarker.setGraphic(new ImageView(
+//						new Image(markerEvento.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkEventoMarker.selectedProperty().bindBidirectional(markerEvento.getMarker().visibleProperty());
+//			}
+//
+//			for (MarkerID markerCaritastemp : markerCaritas) {
+//				checkCaritasMarker.setGraphic(new ImageView(
+//						new Image(markerCaritastemp.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkCaritasMarker.selectedProperty().bindBidirectional(markerCaritastemp.getMarker().visibleProperty());
+//			}
+//			for (MarkerID markerDonazione : markerDonazioni) {
+//				checkDonazioneMarker.setGraphic(new ImageView(
+//						new Image(markerDonazione.getMarker().getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//				checkDonazioneMarker.selectedProperty()
+//						.bindBidirectional(markerDonazione.getMarker().visibleProperty());
+//
+//			}
+//
+//			checkClickMarker.setGraphic(
+//					new ImageView(new Image(markerClick.getImageURL().toExternalForm(), 16.0, 16.0, true, true)));
+//			checkClickMarker.selectedProperty().bindBidirectional(markerClick.visibleProperty());
+//
+//		}
 
 		logger.trace("marker checks done");
 

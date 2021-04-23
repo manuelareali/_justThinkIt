@@ -89,31 +89,30 @@ public class RegistrationShopBoundary implements Initializable {
 	@FXML
 	void registraNegozioPressed(ActionEvent event) {
 		int i = checker();
-		try {
-			if (i == -1) {
-				trigger.MyTrigger();
-			} else {
-				int idShop = regNeg.registraNegozioPressed(tipo, nomeNegozio.getText(), passwordNeg.getText(),
-						viaNeg.getText() + " " + civicoNeg.getText(), telNeg.getText(), mailNeg.getText(),
-						cittaResNeg.getText());
-				try {
-
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/ShopHomePage.fxml"));
-					Parent root = loader.load();
-					Stage home = (Stage) registraNegozio.getScene().getWindow();
-					ShopHomeBoundary shopHomeBoundary = loader.getController();
-					ShopHomeController shopHomeC = new ShopHomeController();
-					shopHomeC.initDataShop(idShop, shopHomeBoundary);
-					home.setScene(new Scene(root, 800, 600));
-
-					home.show();
-				} catch (IOException e) {
-					logger.error(e.getMessage());
-				}
+		if (i == -1) {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("I campi sono vuoti");
 			}
+		} else {
+			int idShop = regNeg.registraNegozioPressed(tipo, nomeNegozio.getText(), passwordNeg.getText(),
+					viaNeg.getText() + " " + civicoNeg.getText(), telNeg.getText(), mailNeg.getText(),
+					cittaResNeg.getText());
+			try {
 
-		} catch (MyException e) {
-			logger.error("I campi sono vuoti");
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/ShopHomePage.fxml"));
+				Parent root = loader.load();
+				Stage home = (Stage) registraNegozio.getScene().getWindow();
+				ShopHomeBoundary shopHomeBoundary = loader.getController();
+				ShopHomeController shopHomeC = new ShopHomeController();
+				shopHomeC.initDataShop(idShop, shopHomeBoundary);
+				home.setScene(new Scene(root, 800, 600));
+
+				home.show();
+			} catch (IOException e) {
+				logger.error(e.getMessage());
+			}
 		}
 
 	}

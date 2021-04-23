@@ -581,6 +581,15 @@ public class CercaCaritas {
 	/**
 	 * initializes the event handlers.
 	 */
+	
+	private void setVisibilityButton() {
+
+		for (Node node : listaBottoni) {
+			node.setVisible(false);
+			buttonBack.setVisible(true);
+		}
+	}
+	
 	private void setupEventHandlers() {
 
 		markerClick.setPosition(RomaCentro);
@@ -600,10 +609,7 @@ public class CercaCaritas {
 				mapView.addMarker(markerClick);
 
 			}
-			for (Node node : listaBottoni) {
-				node.setVisible(false);
-				buttonBack.setVisible(true);
-			}
+			setVisibilityButton();
 
 		});
 
@@ -671,9 +677,9 @@ public class CercaCaritas {
 	}
 
 	public void updateButtonsBox(MarkerType markerType) {
-		for (Node n : listaBottoniOld) {
-			if (!listaBottoni.contains(n)) {
-				listaBottoni.add(n);
+		for (Node nod : listaBottoniOld) {
+			if (!listaBottoni.contains(nod)) {
+				listaBottoni.add(nod);
 			}
 		}
 
@@ -700,87 +706,96 @@ public class CercaCaritas {
 		}
 	}
 
-	public void searchButtonsToRemoveByUser(String ruolo, MarkerType type, ObservableList<Node> lista,
-			List<Node> listaBottoniDaRimuovere) {
 	
 	
-		
-		if (type.equals(MarkerType.CARITAS)) {
-			for (Node node : lista) {
-				Button btn = (Button) node;
-				if (ruolo.equalsIgnoreCase(v)) {
-					switch (btn.getId()) {
-					case EVE:
-					case PRO:
-					case ALL:
-
-						listaBottoniDaRimuovere.add(btn);
-						break;
-					default:
-						break;
-					}
+	public void removeButtonNegozio(String ruolo,ObservableList<Node> lista, List<Node> listaBottoniDaRimuovere) {
+		for (Node node : lista) {
+			Button btn = (Button) node;
+			if (ruolo.equalsIgnoreCase(v)) {
+				switch (btn.getId()) {
+				case PRO:
+				case BAC:
+				case TURN:
+				case ALL:
+				case DON:
+					listaBottoniDaRimuovere.add(btn);
+					break;
+				default:
+					break;
 				}
-
-				if (ruolo.equalsIgnoreCase(c)) {
-					switch (btn.getId()) {
-					case EVE:
-					case PRO:
-					case TURN:
-					case ALL:
-
-						listaBottoniDaRimuovere.add(btn);
-						break;
-					default:
-						break;
-					}
+			} else {
+				switch (btn.getId()) {
+				case EVE:
+				case PRO:
+				case TURN:
+				case ALL:
+				case BAC:
+				case DON:
+					listaBottoniDaRimuovere.add(btn);
+					break;
+				default:
+					break;
 				}
+				
 
-				if (ruolo.equalsIgnoreCase(n)) {
-					switch (btn.getId()) {
-					case EVE:
-					case TURN:
-					case ALL:
+			}
+		}
+	}
+	public void removeButtonCaritas(String ruolo,ObservableList<Node> lista, List<Node> listaBottoniDaRimuovere) {
+		for (Node node : lista) {
+			Button btn = (Button) node;
+			if (ruolo.equalsIgnoreCase(v)) {
+				switch (btn.getId()) {
+				case EVE:
+				case PRO:
+				case ALL:
 
-						listaBottoniDaRimuovere.add(btn);
-						break;
-					default:
-						break;
-					}
+					listaBottoniDaRimuovere.add(btn);
+					break;
+				default:
+					break;
+				}
+			}
+
+			if (ruolo.equalsIgnoreCase(c)) {
+				switch (btn.getId()) {
+				case EVE:
+				case PRO:
+				case TURN:
+				case ALL:
+
+					listaBottoniDaRimuovere.add(btn);
+					break;
+				default:
+					break;
+				}
+			}
+
+			if (ruolo.equalsIgnoreCase(n)) {
+				switch (btn.getId()) {
+				case EVE:
+				case TURN:
+				case ALL:
+
+					listaBottoniDaRimuovere.add(btn);
+					break;
+				default:
+					break;
 				}
 			}
 		}
+	}
+	
+	public void searchButtonsToRemoveByUser(String ruolo, MarkerType type, ObservableList<Node> lista,
+			List<Node> listaBottoniDaRimuovere) {
+	
+		
+		
+		if (type.equals(MarkerType.CARITAS)) {
+		removeButtonCaritas( ruolo,lista,listaBottoniDaRimuovere);
+		}
 		if (type.equals(MarkerType.EVENTO)) {
-			for (Node node : lista) {
-				Button btn = (Button) node;
-				if (ruolo.equalsIgnoreCase(v)) {
-					switch (btn.getId()) {
-					case PRO:
-					case BAC:
-					case TURN:
-					case ALL:
-					case DON:
-						listaBottoniDaRimuovere.add(btn);
-						break;
-					default:
-						break;
-					}
-				} else {
-					switch (btn.getId()) {
-					case EVE:
-					case PRO:
-					case TURN:
-					case ALL:
-					case BAC:
-					case DON:
-						listaBottoniDaRimuovere.add(btn);
-						break;
-					default:
-						break;
-					}
-					
-
-				}
-			}
+		removeButtonNegozio(ruolo,lista,listaBottoniDaRimuovere);
 		}
 		if (type.equals(MarkerType.MAP)) {
 			for (Node node : lista) {

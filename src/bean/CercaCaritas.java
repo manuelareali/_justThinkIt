@@ -4,20 +4,13 @@ import com.sothawo.mapjfx.*;
 import com.sothawo.mapjfx.event.MapLabelEvent;
 import com.sothawo.mapjfx.event.MapViewEvent;
 import com.sothawo.mapjfx.event.MarkerEvent;
-
 import controller.CercaCaritasController;
 import controller.ShopHomeController;
 import controller.UserHomeController;
-
 import entity.MarkerID;
-
-
-
-
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -383,8 +376,6 @@ public class CercaCaritas {
 
 
 	}
-
-	
 
 	public void initMarkers() {
 		

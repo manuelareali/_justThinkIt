@@ -119,7 +119,7 @@ public class RegistrationShopBoundary implements Initializable {
 
 	public int checker() {
 		pageSwitch = new TransizionePagine();
-		if (pageSwitch.checkerText(textField) == false) {
+		if (pageSwitch.checkerText(textField)) {
 			passwordMatch.setText("Alcuni campi sono vuoti");
 			passwordMatch.setVisible(true);
 		}

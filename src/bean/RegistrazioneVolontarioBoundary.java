@@ -1,44 +1,152 @@
-package beanweb;
+package bean;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import controller.RegistrazioneVolontarioController;
+import controller.UserHomeController;
+import exception.MyException;
+import exception.Trigger;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
-
-public class RegistrazioneVolontarioBoundary{
+public class RegistrazioneVolontarioBoundary implements Initializable {
 	private RegistrazioneVolontarioController regC;
 
-   
-	
-	
+	private TextField[] text;
+
+	private static Logger logger = LoggerFactory.getLogger(RegistrazioneVolontarioBoundary.class.getName());
+
+	@FXML
+	private TextField cittaRes;
+
+	@FXML
+	private TextField via;
+
+	@FXML
+	private TextField civico;
+
+	@FXML
+	private TextField tel;
+
+	@FXML
+	private TextField mail;
+
+	@FXML
+	private TextField nome;
+
+	@FXML
+	private TextField cognome;
+
+	@FXML
+	private Button completaReg;
+
+	@FXML
+	private TextField codiceFisc;
+
+	@FXML
+	private Button backButton;
+
+	@FXML
+	private PasswordField password;
+
+	@FXML
+	private PasswordField confermaPass;
+
+	@FXML
+	private Text passwordMatch;
+
+	@FXML
+	private TextField date;
+
+	private Trigger trigger;
+
 	public RegistrazioneVolontarioBoundary() {
 		regC = new RegistrazioneVolontarioController();
+		trigger = new Trigger();
 	}
 
-	
-	public boolean registraVolontarioPressed(String nome, String cognome, String password, String confermaPassword, String via, String recapitoTel, String email, String dataNascita, String citta) {	
-		 if (nome == null || nome.equals("") || cognome == null || cognome.equals("")){
-			 return false;
-		 }
-		 else if(password == null || password.equals("") || confermaPassword == null || confermaPassword.equals("")) {
-			 return false;
-		 }
-		 else if (via == null || via.equals("") ||  citta == null || citta.equals("")){
-			 return false;
-		 }
-		 else if (recapitoTel == null || recapitoTel.equals("")) {
-			 return false;
-		 }
-		 else if (email == null || email.equals("")) {
-			 return false;
-		 }
-		 else if (dataNascita == null || dataNascita.equals("")) {
-			 return false;
-		 }
-		 else {
-				regC.completaButtonPressed( nome, cognome,password, via, recapitoTel, email, dataNascita,citta);
-			 return true;
-		 }
+	@FXML
+	void backButtonPres(ActionEvent event) {
+		TransizionePagine pageswitch = new TransizionePagine();
+		String pagina = "/boundary/RegistrazioneMenu.fxml";
+		Window stage = backButton.getScene().getWindow();
+		pageswitch.visualizzaPagina(pagina, stage);
+
+	}
+
+	@FXML
+	void registraVolontarioPressed(ActionEvent event) {
+		if (checker() == 0) {
+			try {
+				int idVol = regC.completaButtonPressed(nome.getText(), cognome.getText(), password.getText(),
+						via.getText(), tel.getText(), mail.getText(), date.getText(), cittaRes.getText());
+
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/UserHomePage.fxml"));
+				Parent root = loader.load();
+				UserHomeBoundary userHomeBoundary = loader.getController();
+				UserHomeController userHomeC = new UserHomeController();
+				userHomeC.initDataCont(idVol, userHomeBoundary);
+				Stage home = (Stage) completaReg.getScene().getWindow();
+				home.setScene(new Scene(root, 800, 600));
+
+				home.show();
+			} catch (IOException e) {
+				logger.error(e.getMessage());
+			}
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("Alcuni campi sono vuoti");
+			}
+		}
+
+	}
+
+	public int checker() {
+
+		// Controlla che non ci siano campi lasciati vuoti
+		for (int i = 0; i < text.length; i++) {
+			if (text[i].getText().isEmpty()) {
+				passwordMatch.setText("Alcuni campi sono vuoti");
+				passwordMatch.setVisible(true);
+				return -1;
+			}
+		}
+
+		// Valida che i campi password e conferma password siano uguali
+
+		if (password.getText().equals(confermaPass.getText())) {
+			passwordMatch.setVisible(false);
+			return 0;
+		} else {
+			passwordMatch.setText("Le password non corrispondono");
+			passwordMatch.setVisible(true);
+			return -1;
+		}
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+		passwordMatch.setVisible(false);
+		text = new TextField[] { nome, mail, cittaRes, cognome, civico, via, tel };
+		// Per rendere opzionale un campo basta rimuoverlo da questa lista
 	}
 
 }

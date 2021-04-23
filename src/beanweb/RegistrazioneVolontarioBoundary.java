@@ -20,7 +20,7 @@ public class RegistrazioneVolontarioBoundary{
 		 if (nome == null || nome.equals("") || cognome == null || cognome.equals("")){
 			 return false;
 		 }
-		 else if(password == null || password.equals("")) {
+		 else if(password == null || password.equals("") || confermaPassword == null || confermaPassword.equals("")) {
 			 return false;
 		 }
 		 else if (via == null || via.equals("") ||  citta == null || citta.equals("")){

@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import controller.PrenotaTurnoController;
 import entity.Orario;
+import exception.MyException;
+import exception.Trigger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,6 +21,12 @@ import javafx.stage.Stage;
 public class PrenotaTurnoBoundary {
 
 	private PrenotaTurnoController prenotaC;
+	private Trigger trigger;
+	private static Logger logger = LoggerFactory.getLogger(PrenotaTurnoBoundary.class.getName());
+
+	public PrenotaTurnoBoundary() {
+		trigger = new Trigger();
+	}
 
 	@FXML
 	private ResourceBundle resources;
@@ -46,20 +54,22 @@ public class PrenotaTurnoBoundary {
 
 	@FXML
 	void prenotaTurno(ActionEvent event) {
-
-		prenotaC.prenotaTurno(turni.getValue().toString(), cbOraInizio.getValue().toString(),
-				cbOraFine.getValue().toString(), cv.getText());
-		Stage st = (Stage) prenota.getScene().getWindow();
-		st.close();
+		if (checker() != false) {
+			prenotaC.prenotaTurno(turni.getValue().toString(), cbOraInizio.getValue().toString(),
+					cbOraFine.getValue().toString(), cv.getText());
+			Stage st = (Stage) prenota.getScene().getWindow();
+			st.close();
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("Alcuni campi sono vuoti");
+			}
+		}
 	}
 
 	public boolean checker() {
-		Logger logger = LoggerFactory.getLogger(PrenotaTurnoBoundary.class.getName());
-		
-		// Controlla che non ci siano campi lasciati vuoti
-
 		if (cv.getText().isEmpty()) {
-			logger.debug("riprova");
 			return false;
 		} else {
 			return true;

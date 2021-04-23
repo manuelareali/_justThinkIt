@@ -626,7 +626,7 @@ public class CercaCaritas {
 
 			for (MarkerID markerC : markerCaritas) {
 				if (marker.getId().equals(markerC.getMarker().getId())) {
-					logger.debug("HAi cliccato sul castello.");
+					logger.debug("Hai cliccato sul castello.");
 					updateButtonsBox(MarkerType.CARITAS);
 					idCaritas = markerC.getId();
 				}

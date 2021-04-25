@@ -80,10 +80,10 @@ public class CreaTurnoBoundary {
 	public boolean checker() {
 		// Controlla che non ci siano campi lasciati vuoti
 		for (int i = 0; i < text.length; i++) {
-			if (text[i].getText().isEmpty() == true){
+			if (text[i].getText().isEmpty()){
 				return false;
 			}
-		}	if(textArea[0].getText().isEmpty() == true) {
+		}	if(textArea[0].getText().isEmpty()) {
 			 return false;
 		}	if(giorni.getValue() == null) {
 			return false;

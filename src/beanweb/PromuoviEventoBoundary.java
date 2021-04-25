@@ -10,7 +10,10 @@ public class PromuoviEventoBoundary {
 		private int idCar;
 		private int idShop;
 		private static PromuoviEventoBoundary   instance  = null;
-
+		
+		private PromuoviEventoBoundary() {
+			
+		}
 		
 public static PromuoviEventoBoundary getInstance() {
 		if(instance == null) {

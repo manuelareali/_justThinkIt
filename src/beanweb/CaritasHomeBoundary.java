@@ -22,11 +22,11 @@ public class CaritasHomeBoundary {
 		return instance;
 	}
 
-	public CaritasHomeBoundary() {
-		bacheca = new BachecaPersonaleBoundary();
-		gestTurn = new GestisciTurniBoundary();
-		gestDon = new GestisciDonazioniBoundary();
-		gestisciB = new GestisciEventiCaritasBoundary();
+	private CaritasHomeBoundary() {
+		bacheca = bacheca.getInstance();
+		gestTurn = gestTurn.getInstance();
+		gestDon = gestDon.getInstance();
+		gestisciB = gestisciB.getInstance();
 	}
 
 	public void gestisciDonazioni() {		

@@ -21,7 +21,7 @@ public class DonationBoundary {
 	
 	
 	
-	public DonationBoundary() {
+	private DonationBoundary() {
 		controller = DonationController.getInstance();
 	}
 	

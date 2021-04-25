@@ -15,40 +15,15 @@ public class LoginBoundary {
 	private beanweb.UserHomeBoundary userHomeBoundary;
 	private UserHomeController userHomeController;
 	private beanweb.ShopHomeBoundary shopHomeBoundary;
-	private static LoginBoundary instance = null;
-	
-
-	public static LoginBoundary getInstance() {
-		if (instance == null) {
-			instance = new LoginBoundary();
-
-		}
-		return instance;
-	}
+	private beanweb.CaritasHomeBoundary caritasHomeBoundary;
 	
 	private String username;
 	private String password;
 	
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
+	
+		
 	public String loginPressed(String username, String password) {
 		if(username != null && !username.equals("") && password != null && !password.equals("")){
-			beanweb.CaritasHomeBoundary caritasHomeBoundary = new CaritasHomeBoundary();
 			int idUser = loginC.trovaID(username);
 			String loggedUser = loginC.loginAccess(username, password);
 			if (loggedUser.equalsIgnoreCase("Volontario")) {

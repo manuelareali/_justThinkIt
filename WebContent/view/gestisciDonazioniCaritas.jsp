@@ -4,9 +4,7 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import = "entity.DonazioneTab" %> 
-
-<jsp:useBean id="GestisciDonazioniBoundary" scope="application" class="beanweb.GestisciDonazioniBoundary"/>
-<jsp:setProperty name="GestisciDonazioniBoundary" property="*"/>
+<%@ page import="beanweb.GestisciDonazioniBoundary"%>
  
  <%Class.forName("com.mysql.jdbc.Driver");%>
  <%

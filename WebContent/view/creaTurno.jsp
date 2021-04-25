@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="CreaTurnoBoundary" scope="application" class="beanweb.CreaTurnoBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="CreaTurnoBoundary" property="*"/>
+<%@ page import="beanweb.CreaTurnoBoundary"%>
 <%
 Class.forName("com.mysql.jdbc.Driver");
 	if(request.getParameter("creaTurno") != null){

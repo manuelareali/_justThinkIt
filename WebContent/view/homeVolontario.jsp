@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="UserHomeBoundary" scope="application" class="beanweb.UserHomeBoundary"/>
+<%@ page import="beanweb.UserHomeBoundary"%>
 
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="UserHomeBoundary" property="*"/>
+
 <%
 	if(request.getParameter("CERCA CARITAS") != null){
 		if(UserHomeBoundary.getInstance().searchCaritasButtonPressed() == 0){
@@ -23,6 +21,7 @@
 </head>
 <body>
 <form action = "homeVolontario.jsp" name ="my" method = "POST">
+
 	<div style= "position:absolute;top: 1%; z-index:1">
 	<img src="../img/caritas.jpg"  width= "450px" height= "300px">
 	</div>

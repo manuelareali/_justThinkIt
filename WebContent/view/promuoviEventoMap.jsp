@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="PromuoviEventoBoundary" scope="application" class="beanweb.PromuoviEventoBoundary"/>
- 
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="PromuoviEventoBoundary" property="*"/>
+<%@ page import="beanweb.PromuoviEventoBoundary"%>
  
 <%Class.forName("com.mysql.jdbc.Driver"); %>
 <%

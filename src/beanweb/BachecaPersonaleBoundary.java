@@ -19,7 +19,7 @@ public class BachecaPersonaleBoundary {
 		return instance;
 		} 
 	
-	public BachecaPersonaleBoundary() {
+	private BachecaPersonaleBoundary() {
 		bachecaController = new BachecaPersonaleController();
 	}
 	

@@ -15,8 +15,8 @@ public class ShopHomeBoundary {
 			return instance;
 		}
 
-		public ShopHomeBoundary() {
-			 gestisciBoundary = new GestisciEventiBoundary();
+		private ShopHomeBoundary() {
+			 gestisciBoundary = gestisciBoundary.getInstance();
 		}
 		
     public void cercaCaritas(){

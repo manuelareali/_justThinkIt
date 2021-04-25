@@ -13,6 +13,7 @@ public class GestisciDonazioniBoundary {
 
 	private int idVolontario;
 	private GestisciDonazioniCaritas gestDon;
+	private EmailBoundary email;
 	
 	
 	 private static  GestisciDonazioniBoundary instance  = null;
@@ -38,7 +39,7 @@ public class GestisciDonazioniBoundary {
 		    
 
 	public void contattaVolontario() {
-		EmailBoundary email = new EmailBoundary();
+		email = email.getInstance();
 		email.loadEmail(this.idVolontario, caritas);
 	}
 
@@ -62,7 +63,7 @@ public class GestisciDonazioniBoundary {
 		this.caritas = caritas;
 	}
 	
-	public GestisciDonazioniBoundary() {
+	private GestisciDonazioniBoundary() {
 		this.gestDon = new GestisciDonazioniCaritas();
 		new ArrayList<>();
 	}

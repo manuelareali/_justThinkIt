@@ -4,12 +4,7 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import = "entity.Necessita" %> 
-
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="BachecaBoundary" scope="application" class="beanweb.BachecaBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="BachecaBoundary" property="*"/>
+<%@ page import="beanweb.BachecaBoundary"%>
     
 <%
 Class.forName("com.mysql.jdbc.Driver");

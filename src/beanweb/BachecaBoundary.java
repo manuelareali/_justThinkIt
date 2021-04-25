@@ -23,7 +23,7 @@ public class BachecaBoundary {
 		return instance;
 		}
 	
-	public BachecaBoundary(){
+	private BachecaBoundary(){
 		bachecaController = BachecaController.getInstance();
 	}
 	

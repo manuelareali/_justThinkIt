@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="CreaNecessitaBoundary" scope="application" class="beanweb.CreaNecessitaBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="CreaNecessitaBoundary" property="*"/>
+<%@ page import="beanweb.CreaNecessitaBoundary"%>
 
 <%
 Class.forName("com.mysql.jdbc.Driver");

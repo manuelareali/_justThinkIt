@@ -21,9 +21,8 @@ public class GestisciTurniBoundary {
 			return instance;
 			}
 	    
-	    public GestisciTurniBoundary() {
+	    private GestisciTurniBoundary() {
 	    	this.gestTurn = new GestioneTurniCaritas();
-	    	new CreaTurnoBoundary();
 	    }
 	    
 	   

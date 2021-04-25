@@ -44,8 +44,7 @@ public class GestisciEventiBoundary {
 	    }
 
 
-	public GestisciEventiBoundary() {
-
+	private GestisciEventiBoundary() {
 		gestEventC = new GestisciEventiController();
 
 	}

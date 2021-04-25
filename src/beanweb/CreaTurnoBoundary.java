@@ -10,6 +10,10 @@ public class CreaTurnoBoundary {
 
 	private static CreaTurnoBoundary instance = null;
 	
+	private CreaTurnoBoundary() {
+		
+	}
+	
 	public static CreaTurnoBoundary getInstance() {
 		if (instance == null) {
 			instance = new CreaTurnoBoundary();

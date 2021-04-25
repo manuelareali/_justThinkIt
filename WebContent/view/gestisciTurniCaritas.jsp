@@ -4,12 +4,7 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import = "entity.TurnoTab" %>
-   
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="GestisciTurniBoundary" scope="application" class="beanweb.GestisciTurniBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="GestisciTurniBoundary" property="*"/>
+<%@ page import="beanweb.GestisciTurniBoundary"%>
 
 <%
 Class.forName("com.mysql.jdbc.Driver");

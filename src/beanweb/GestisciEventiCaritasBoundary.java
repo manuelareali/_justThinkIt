@@ -51,7 +51,7 @@ public class GestisciEventiCaritasBoundary {
 			this.idCar = idCar;
 		}
 		
-		public GestisciEventiCaritasBoundary(){
+	private GestisciEventiCaritasBoundary(){
 			gestEventC = new GestisciEventiCaritasController();
 		}
 		

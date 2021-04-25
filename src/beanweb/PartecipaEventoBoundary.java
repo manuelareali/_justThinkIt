@@ -17,7 +17,7 @@ public class PartecipaEventoBoundary {
 		return instance;
 		}
 	
-	public PartecipaEventoBoundary() {
+	private PartecipaEventoBoundary() {
 		partecipaC = PartecipaEventoController.getInstance();
 	}
 

@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="CaritasHomeBoundary" scope="application" class="beanweb.CaritasHomeBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="CaritasHomeBoundary" property="*"/>
+<%@ page import="beanweb.CaritasHomeBoundary"%>
 
 <%
 	if (request.getParameter("BACHECA") != null){

@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="EmailBoundary" scope="application" class="beanweb.EmailBoundary"/>
 
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="EmailBoundary" property="*"/>
+<%@ page import="beanweb.EmailBoundary"%>
 
 <%
 Class.forName("com.mysql.jdbc.Driver");

@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%Class.forName("com.mysql.jdbc.Driver"); %>
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="DonationBoundary" scope="application" class="beanweb.DonationBoundary"/>
+<%@ page import="beanweb.DonationBoundary"%>
 
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="DonationBoundary" property="*"/>
+<%Class.forName("com.mysql.jdbc.Driver"); %>
+
 
 <%	
 	if(request.getParameter("CONFERMA")!=null){

@@ -8,7 +8,12 @@ public class CreaNecessitaBoundary {
 		private int idCaritas;
 		
 		
+		
 		private static CreaNecessitaBoundary instance = null;
+		
+		private CreaNecessitaBoundary() {
+			
+		}
 		  
 		public static CreaNecessitaBoundary getInstance() {
 		  if (instance == null) {

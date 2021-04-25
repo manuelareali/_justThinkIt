@@ -12,7 +12,7 @@ public class PrenotaTurnoBoundary {
 
 	private static PrenotaTurnoBoundary instance = null;
 	
-	public PrenotaTurnoBoundary() {
+	private PrenotaTurnoBoundary() {
 		prenotaC = PrenotaTurnoController.getInstance();
 	}
 

@@ -28,6 +28,8 @@ public class CercaCaritas {
 	private BachecaBoundary bachecaBoundary;
 	private PartecipaEventoBoundary partecipaEventoBoundary;
 	private PromuoviEventoBoundary promuoviEventoBoundary;
+	private UserHomeBoundary userHomeBoundary;
+	private ShopHomeBoundary shopHomeBoundary;
 	
 	private static CercaCaritas instance  = null;
 	
@@ -43,12 +45,12 @@ public class CercaCaritas {
 	
 	public void indietro() {
 	if (ruolo.equals(v)) {				
-				UserHomeBoundary userHomeBoundary = new UserHomeBoundary();
+				userHomeBoundary = userHomeBoundary.getInstance();
 				UserHomeController userHomeController = new UserHomeController();
 				userHomeController.initDataCont(this.idUser,userHomeBoundary);
 	}
 	else if(ruolo.equalsIgnoreCase(n)) {
-			ShopHomeBoundary shopHomeBoundary = new ShopHomeBoundary();
+			shopHomeBoundary = ShopHomeBoundary.getInstance();
 			ShopHomeController shopHomeC = new ShopHomeController();
 			shopHomeC.initDataShop(this.idUser, shopHomeBoundary);
 		}

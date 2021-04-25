@@ -10,14 +10,14 @@ import controller.UserHomeController;
 public class UserHomeBoundary{
 
 
-private static UserHomeBoundary instance = null;
+
 
 private int userId;
 	
 	private UserHomeController userController ;
 
 	
-	
+	private static UserHomeBoundary instance = null;
 	
 	public static UserHomeBoundary getInstance() {
 		if (instance == null) {
@@ -27,9 +27,8 @@ private int userId;
 	}
 	
 	
-	public UserHomeBoundary() {
+	private UserHomeBoundary() {
 		 userController = new UserHomeController();
-	
 	}
    
 

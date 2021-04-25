@@ -4,12 +4,7 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import = "entity.EventTab" %>
-
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="GestisciEventiBoundary" scope="application" class="beanweb.GestisciEventiBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="GestisciEventiBoundary" property="*"/>
+<%@ page import="beanweb.GestisciEventiBoundary"%>
 
 <%Class.forName("com.mysql.jdbc.Driver"); %>
 <%if (request.getParameter("cancella") != null){

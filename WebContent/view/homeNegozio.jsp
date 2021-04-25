@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<!-- dichiarazione e instanziazione di un loginBean !-->
-<jsp:useBean id="ShopHomeBoundary" scope="application" class="beanweb.ShopHomeBoundary"/>
-
-<!-- mappare gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="ShopHomeBoundary" property="*"/>
+<%@ page import="beanweb.ShopHomeBoundary"%>
 
 <%
 	if (request.getParameter("GESTISCI EVENTI") != null){

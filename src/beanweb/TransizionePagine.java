@@ -6,7 +6,7 @@ import controller.CercaCaritasController;
 
 public class TransizionePagine {
 	private beanweb.CercaCaritas cercaCaritasBean;
-
+	private beanweb.CaritasHomeBoundary caritasHomeBoundary;
 	
 				
 	
@@ -18,7 +18,6 @@ public class TransizionePagine {
 	
 	
 	public void backToMenuCaritas(int idUser) {
-			CaritasHomeBoundary caritasHomeBoundary = new CaritasHomeBoundary();
 			CaritasHomeController caritasHomeC = new CaritasHomeController();
 			caritasHomeC.initDataCaritas(idUser, caritasHomeBoundary);
 	}

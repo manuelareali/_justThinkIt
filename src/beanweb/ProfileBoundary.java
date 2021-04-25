@@ -9,13 +9,12 @@ public class ProfileBoundary{
 
 	
 	private int idUser;
-	
+	private UserHomeBoundary userHomeBoundary;
 
     
 
  
 void backHomeButtonPressed() {
-			UserHomeBoundary userHomeBoundary = new UserHomeBoundary();
 			UserHomeController userHomeC = new UserHomeController();
 			
 			userHomeC.initDataCont(idUser, userHomeBoundary);

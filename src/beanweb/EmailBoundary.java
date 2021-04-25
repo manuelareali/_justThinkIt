@@ -13,6 +13,10 @@ public class EmailBoundary {
     private String mittente;
     private static EmailBoundary instance = null;
     
+	private EmailBoundary() {
+		emailC = new EmailController();
+	}
+    
     public static EmailBoundary getInstance() {
 		if(instance == null) {
 			instance = new EmailBoundary();
@@ -77,9 +81,7 @@ public class EmailBoundary {
     
     
 
-	public EmailBoundary() {
-		emailC = new EmailController();
-	}
+
 	
 	
 	public void loadEmail(int idDestinatario, int idMittente) {

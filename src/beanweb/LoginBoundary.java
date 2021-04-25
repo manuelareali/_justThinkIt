@@ -13,16 +13,15 @@ public class LoginBoundary {
 	private LoginController loginC = new LoginController();
 
 	private beanweb.UserHomeBoundary userHomeBoundary;
-	private UserHomeController userHomeController;
+
 	private beanweb.ShopHomeBoundary shopHomeBoundary;
 	private beanweb.CaritasHomeBoundary caritasHomeBoundary;
-	
-	private String username;
-	private String password;
+
 	
 	
 		
 	public String loginPressed(String username, String password) {
+		UserHomeController userHomeController;
 		if(username != null && !username.equals("") && password != null && !password.equals("")){
 			int idUser = loginC.trovaID(username);
 			String loggedUser = loginC.loginAccess(username, password);

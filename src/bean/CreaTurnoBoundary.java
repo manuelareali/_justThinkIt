@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import controller.CreaTurnoController;
+import exception.MyException;
+import exception.Trigger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +20,16 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class CreaTurnoBoundary {
+	private static Logger logger = LoggerFactory.getLogger(CreaTurnoBoundary.class.getName());
+	
+	private TextField[] text ;
+	private TextArea[] textArea;
+	
+	private Trigger trigger;
+	
+	public CreaTurnoBoundary() {
+		trigger = new Trigger();
+	}
 
 	@FXML
 	private Button back;
@@ -64,12 +76,34 @@ public class CreaTurnoBoundary {
 
 	}
 
+
+	public boolean checker() {
+		// Controlla che non ci siano campi lasciati vuoti
+		for (int i = 0; i < text.length; i++) {
+			if (text[i].getText().isEmpty() == true){
+				return false;
+			}
+		}	if(textArea[0].getText().isEmpty() == true) {
+			 return false;
+		}	if(giorni.getValue() == null) {
+			return false;
+		}
+		return true;
+	}
+	
 	@FXML
 	void creaTurnoPressed(ActionEvent event) {
 		CreaTurnoController creaTurn = new CreaTurnoController();
+		if(checker()) {
 		creaTurn.creaTurno(caritas, giorni.getValue().toString(), orain.getText(), oraFin.getText(),
 				Integer.parseInt(numParte.getText()), note.getText());
-
+		}else {
+			try {
+				trigger.myTrigger();
+			}catch(MyException e) {
+				logger.error("Alcuni campi sono vuoti");
+			}
+		}
 	}
 
 	public void setCaritas(int caritas) {
@@ -86,6 +120,16 @@ public class CreaTurnoBoundary {
 			giorni.getItems().add(days[i]);
 
 		}
+		
+		text = new TextField[] {
+				this.oraFin, 
+				this.orain,
+				this.numParte
+		};
+		
+		textArea = new TextArea[] {
+				this.note
+		};
 
 	}
 

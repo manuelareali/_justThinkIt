@@ -626,7 +626,7 @@ public class CercaCaritas {
 
 			for (MarkerID markerC : markerCaritas) {
 				if (marker.getId().equals(markerC.getMarker().getId())) {
-					logger.debug("Hai cliccato sul castello.");
+					logger.debug("Hai cliccato sulla caritas.");
 					updateButtonsBox(MarkerType.CARITAS);
 					idCaritas = markerC.getId();
 				}
@@ -658,10 +658,6 @@ public class CercaCaritas {
 			event.consume();
 			labelEvent.setText("Event: label right clicked: " + event.getMapLabel().getText());
 		});
-
-		mapView.addEventHandler(MapViewEvent.MAP_POINTER_MOVED, event -> 
-			logger.debug("pointer moved to " + event.getCoordinate())
-		);
 
 		logger.trace("map handlers initialized");
 	}

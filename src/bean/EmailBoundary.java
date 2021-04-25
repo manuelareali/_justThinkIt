@@ -17,7 +17,9 @@ public class EmailBoundary {
 	
 	private static Logger logger = LoggerFactory.getLogger(EmailBoundary.class.getName());
 	private EmailController emailC;
+	
 	private TextField[] text;
+	private TextArea[] textMex;
 	
 	public EmailBoundary() {
 		trigger = new Trigger();
@@ -63,15 +65,15 @@ public class EmailBoundary {
 	}
 
 	public boolean checker() {
-		boolean x = true;
 		// Controlla che non ci siano campi lasciati vuoti
 		for (int i = 0; i < text.length; i++) {
-			if (text[i].getText().isEmpty()) {
-				
-				return true;
+			if (text[i].getText().isEmpty() == true){
+				return false;
 			}
-		}		
-		return false;
+		}	if(textMex[0].getText().isEmpty() == true) {
+			 return false;
+		}	
+		return true;
 	}
 
 	
@@ -79,14 +81,25 @@ public class EmailBoundary {
 	void initialize() {
 
 		emailC = new EmailController();
-
+		text = new TextField[] {
+				this.destinatario,
+				this.mittente,
+				this.oggetto
+		};
+		
+		textMex = new TextArea[]{this.messaggio};
 	}
 
 	public void loadEmail(int idDestinatario, int idMittente) {
-		String[] mitDest = emailC.loadMittenteDestinatario(idDestinatario, idMittente);
-		this.mittente.setText(mitDest[0]);
-		this.destinatario.setText(mitDest[1]);
-
+		try {
+			String[] mitDest = emailC.loadMittenteDestinatario(idDestinatario, idMittente);
+			this.mittente.setText(mitDest[0]);
+			this.destinatario.setText(mitDest[1]);
+			trigger.myTrigger();
+		}catch(MyException e){
+			logger.error("Bisogna selezionare una riga della tabella");	
+			
+		}
 	}
 
 }

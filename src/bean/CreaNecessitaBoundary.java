@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import controller.CreaNecessitaController;
+import exception.MyException;
+import exception.Trigger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
@@ -22,6 +25,13 @@ public class CreaNecessitaBoundary {
 	private Logger logger = LoggerFactory.getLogger(CreaNecessitaBoundary.class.getName());
 	private String[] tipo = { "Vestiti", "Cibo" };
 	private String[] urg = { "Alta", "Normale", "Bassa" };
+
+	private TextArea[] text;
+	private Trigger trigger;
+
+	public CreaNecessitaBoundary() {
+		trigger = new Trigger();
+	}
 
 	@FXML
 	private TextArea descrizione;
@@ -43,7 +53,21 @@ public class CreaNecessitaBoundary {
 	@FXML
 	void backPressed(ActionEvent event) {
 		this.switchPage(back.getScene().getWindow());
-	
+
+	}
+
+	public boolean checker() {
+		// Controlla che non ci siano campi lasciati vuoti
+		if (text[0].getText().isEmpty() == true) {
+			return false;
+		}
+		if (tipologia.getValue() == null) {
+			return false;
+		}
+		if (urgenza.getValue() == null) {
+			return false;
+		}
+		return true;
 	}
 
 	@FXML
@@ -51,19 +75,28 @@ public class CreaNecessitaBoundary {
 
 		CreaNecessitaController creaNec = new CreaNecessitaController();
 		creaNec.inizializza(idCaritas);
-		int i = creaNec.creaNecessita(tipologia.getValue().toString(), urgenza.getValue().toString(),
-				descrizione.getText());
-		if (i == 0) {
-			this.switchPage(creaAnnuncio.getScene().getWindow());
-			
-		} else
-			logger.trace("errore nella creazione dell'annuncio");
+		if (checker()) {
+			int i = creaNec.creaNecessita(tipologia.getValue().toString(), urgenza.getValue().toString(),
+					descrizione.getText());
+			if (i == 0) {
+				this.switchPage(creaAnnuncio.getScene().getWindow());
+			} else {
+				logger.trace("errore nella creazione dell'annuncio");
+			}
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("Alcuni campi sono vuoti");
+			}
+		}
 	}
 
 	@FXML
 	void initialize() {
 		tipologia.getItems().addAll(tipo);
 		urgenza.getItems().addAll(urg);
+		text = new TextArea[] { this.descrizione };
 
 	}
 
@@ -71,7 +104,6 @@ public class CreaNecessitaBoundary {
 		this.idCaritas = caritas2;
 	}
 
-	
 	public void switchPage(Window stage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/Bacheca_Personale.fxml"));
@@ -88,5 +120,5 @@ public class CreaNecessitaBoundary {
 			logger.error(e.getMessage());
 		}
 	}
-	
+
 }

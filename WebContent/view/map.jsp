@@ -69,7 +69,8 @@ List<CoordinateMap> donazione = CercaCaritas.initMarkersDonazione();
 		<%
 		if (CercaCaritas.getInstance().trovaRuoloBean().equalsIgnoreCase("Volontario")) {
 		%>
-		<div class=don>
+		<div class=don onclick="myFunction()">
+		<span class="popuptext" id="myPopup">A Simple Popup!</span>
 			<button id="donazione" name="donazione"
 				style="visibility: hidden; position: absolute; top: 35%; left: 1%; border: 1px solid red; background: red; color: white; height: 40px; width: 150px; font-weight: bold; font-size: 14px;">CREA
 				DONAZIONE</button>
@@ -399,15 +400,6 @@ List<CoordinateMap> donazione = CercaCaritas.initMarkersDonazione();
 			}
 		}
 	</script>
-<script>
-// When the user clicks on <div>, open the popup
-function myFunction() {
-  var popup = document.getElementById("donazione");
-  popup.classList.toggle("show");
-}
-</script>
-<div class="popup" onclick="myFunction()">Click me!
-  <span class="popuptext" id="donazione">Popup text...</span>
-</div>
+
 </body>
 </html>

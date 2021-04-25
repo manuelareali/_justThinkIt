@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 
 import controller.GestisciDonazioniCaritas;
 import entity.DonazioneTab;
+import exception.MyException;
+import exception.Trigger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,7 +27,9 @@ import javafx.stage.Stage;
 
 public class GestisciDonazioniBoundary {
 
+	private Trigger trigger;
 	
+		
 	@FXML
 	private TableView<DonazioneTab> table;
 
@@ -57,7 +61,7 @@ public class GestisciDonazioniBoundary {
 
 	private int caritas;
 
-	private int idVolontario;
+	private int idVolontario = 0;
 	private int idDono;
 
 	private GestisciDonazioniCaritas gestDon;
@@ -81,6 +85,7 @@ public class GestisciDonazioniBoundary {
 	@FXML
 	void contattaVolontario(ActionEvent event) {
 		Logger logger = LoggerFactory.getLogger(GestisciDonazioniBoundary.class.getName());
+		if(this.idVolontario != 0) {
 		try {
 
 			FXMLLoader fxmlLoader = new FXMLLoader();
@@ -98,6 +103,13 @@ public class GestisciDonazioniBoundary {
 
 		} catch (IOException e) {
 			logger.error(e.getMessage());
+		}
+		}else {
+			try {
+				trigger.myTrigger();
+			}catch(MyException e) {
+				logger.error("Devi selezionare una riga della tabella");
+			}
 		}
 
 	}
@@ -129,6 +141,7 @@ public class GestisciDonazioniBoundary {
 	public GestisciDonazioniBoundary() {
 		this.gestDon = new GestisciDonazioniCaritas();
 		listDon = new ArrayList<>();
+		trigger = new Trigger();
 	}
 
 

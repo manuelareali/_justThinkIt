@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import controller.GestisciEventiCaritasController;
 import entity.EventTab;
+import exception.MyException;
+import exception.Trigger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,13 +26,11 @@ import javafx.stage.Stage;
 
 public class GestisciEventiCaritasBoundary {
 
-	
-
 	private GestisciEventiCaritasController gestEventC;
 	private int idCar;
-	
+
 	private EventTab event;
-	
+	private Trigger trigger;
 
 	@FXML
 	private TableView<EventTab> tab;
@@ -68,36 +68,41 @@ public class GestisciEventiCaritasBoundary {
 
 	}
 
-	
-
 	@FXML
 	void backtomenu(ActionEvent event) {
 		TransizionePagine pageSwitch = new TransizionePagine();
 		pageSwitch.backToMenuCaritas(idCar, back.getScene().getWindow());
-	
 
 	}
 
 	@FXML
 	void contattaShop(ActionEvent event) {
 		Logger logger = LoggerFactory.getLogger(GestisciEventiCaritasBoundary.class.getName());
-		try {
+		if (this.event != null) {
+			try {
 
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			Parent rootNode = fxmlLoader.load(getClass().getResourceAsStream("/boundary/Email.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader();
+				Parent rootNode = fxmlLoader.load(getClass().getResourceAsStream("/boundary/Email.fxml"));
 
-			EmailBoundary email;
-			email = fxmlLoader.getController();
-			email.loadEmail(this.event.getCodiceNegozio(), idCar);
-			Stage stage = new Stage();
-			stage.setTitle("Email");
+				EmailBoundary email;
+				email = fxmlLoader.getController();
+				email.loadEmail(this.event.getCodiceNegozio(), idCar);
+				Stage stage = new Stage();
+				stage.setTitle("Email");
 
-			stage.setScene(new Scene(rootNode, 800, 500));
-			stage.setResizable(false);
-			stage.show();
+				stage.setScene(new Scene(rootNode, 800, 500));
+				stage.setResizable(false);
+				stage.show();
 
-		} catch (IOException e) {
-			logger.error(e.getMessage());
+			} catch (IOException e) {
+				logger.error(e.getMessage());
+			}
+		} else {
+			try {
+				trigger.myTrigger();
+			} catch (MyException e) {
+				logger.error("Devi selezionare una riga della tabella");
+			}
 		}
 
 	}
@@ -108,7 +113,6 @@ public class GestisciEventiCaritasBoundary {
 
 	}
 
-	
 	public void loadShop(int idCar) {
 		this.idCar = idCar;
 		List<EventTab> listEv = gestEventC.caricaEventi(this.idCar);
@@ -127,6 +131,7 @@ public class GestisciEventiCaritasBoundary {
 
 	public GestisciEventiCaritasBoundary() {
 		gestEventC = new GestisciEventiCaritasController();
+		trigger = new Trigger();
 	}
 
 }

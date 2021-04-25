@@ -16,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
@@ -58,13 +57,10 @@ public class CreaNecessitaBoundary {
 
 	public boolean checker() {
 		// Controlla che non ci siano campi lasciati vuoti
-		if (text[0].getText().isEmpty() == true) {
+		if (text[0].getText().isEmpty()) {
 			return false;
 		}
-		if (tipologia.getValue() == null) {
-			return false;
-		}
-		if (urgenza.getValue() == null) {
+		if (tipologia.getValue() == null && urgenza.getValue() == null) {
 			return false;
 		}
 		return true;

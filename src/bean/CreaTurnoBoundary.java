@@ -56,7 +56,6 @@ public class CreaTurnoBoundary {
 
 	@FXML
 	void backPressed(ActionEvent event) {
-		Logger logger = LoggerFactory.getLogger(CreaTurnoBoundary.class.getName());
 
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/gestisci_turni_caritas.fxml"));
@@ -85,7 +84,8 @@ public class CreaTurnoBoundary {
 			}
 		}	if(textArea[0].getText().isEmpty()) {
 			 return false;
-		}	if(giorni.getValue() == null) {
+		}	
+		if(giorni.getValue() == null) {
 			return false;
 		}
 		return true;

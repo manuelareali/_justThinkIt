@@ -67,10 +67,10 @@ public class EmailBoundary {
 	public boolean checker() {
 		// Controlla che non ci siano campi lasciati vuoti
 		for (int i = 0; i < text.length; i++) {
-			if (text[i].getText().isEmpty() == true){
+			if (text[i].getText().isEmpty()){
 				return false;
 			}
-		}	if(textMex[0].getText().isEmpty() == true) {
+		}	if(textMex[0].getText().isEmpty()) {
 			 return false;
 		}	
 		return true;
